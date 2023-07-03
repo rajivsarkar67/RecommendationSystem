@@ -49,11 +49,13 @@
         </div>
         <div class="tabPanels">
             <div class="panel_1" *ngIf="selectedTab === 1">
-                <div class="dataContainer" *ngFor="let data of convertedArray">
+                <div class="data_container" *ngFor="let data of convertedArray">
                     <p class="data_name">{{data.name}}</p>
-                    <div class="data" *ngFor="let value of data.values">
-                        <span>{{value.value}}</span>
-                        <img width="300" height="200" [src]="value.img">
+                    <div class="data_list">
+                        <div class="data" *ngFor="let value of data.values">
+                            <img [src]="value.img">
+                            <span>{{value.value}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
