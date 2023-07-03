@@ -1,16 +1,18 @@
 .main-wrapper {
+    font-family: cursive;
+
     .white_text{
         color: #ffffff;
     }
     label{
         display: block;
         margin-bottom: 0.4rem;
+        font-size: large;
     }
 
     width: 70%;
     margin: 0 auto;
     article {
-        // width: 90%;
         margin: 0 auto;
         background: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1l)
         ;
@@ -23,6 +25,17 @@
         width: 390px;
         margin: 0px auto;
         padding: 5px 0;
+
+        #first_label{
+            margin-bottom: 1rem;
+        }
+
+        select, input{
+            height: 2rem;
+            border-radius: 0.4rem;
+            border: none;
+            width: 10rem;
+        }
     }
 
     .tabContainer{
@@ -30,16 +43,17 @@
         
         .btnContainer{
             .tab_btn{
-                width: 25%;
                 text-align: center;
                 height: 2rem;
+                width: 25%;
+                border-bottom: none;
             }
         }
 
         .data_container{
             background-color: white;
             border: 1px solid #777;
-            border-radius: 1rem;
+            // border-radius: 1rem;
             margin: 0 0 1rem 0;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
             .data_name{
@@ -70,7 +84,7 @@
 
                 span{
                     display: inline-block;
-                    margin: 0 0 0 1rem;
+                    margin: 0 1rem 0 1rem;
                 }
             }
         }
@@ -82,17 +96,10 @@
 .submit_btn{
     margin-top: 1.5rem;
     height: 2rem;
-    width: 6rem;
+    width: 10rem;
+    font-size: larger;
     background: #28a784;
     color: white;
     border-radius: 0.3rem;
     border: none;
-}
-
-.chart_btn{
-    height: 1.6rem;
-    background: #1e4ea3;
-    color: white;
-    border: none;
-    border-radius: 0.3rem;
 }

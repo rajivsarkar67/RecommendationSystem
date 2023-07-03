@@ -8,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit{
   title = 'RecommendationSystem';
   text_from_dropdown = 'Enter User ID : ';
-  button_from_dropdown = 'User Chart';
-  selectedTab = 1;
+  selectedTab = 'Response';
   convertedArray: any = [];
+  tabArray = ['Response', 'User Chart'];
+
   trialData: any = {'1. Trending Videos':
               [{'value': "Stretch Total Body 20mins with Lisa #1",'img': 'https://images.unsplash.com/photo-1562771379-eafdca7a02f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'},
               {'value': "Meditation 20mins with Liana #2",'img': 'https://images.pexels.com/photos/8436490/pexels-photo-8436490.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},
@@ -37,35 +38,38 @@ export class AppComponent implements OnInit{
     console.log(val);
     if(val === "user"){
       this.text_from_dropdown = 'Enter User ID : ';
-      this.button_from_dropdown = 'User Chart';
+      this.tabArray = ['Response', 'User Chart'];
     }
     else if(val === "zone"){
       this.text_from_dropdown = 'Enter Zone ID : ';
-      this.button_from_dropdown = 'Zone Chart';
+      this.tabArray = ['Response','Zone Chart'];
     }
     else if(val === "user_zone"){
       this.text_from_dropdown = 'Enter User ID : ';
-      this.button_from_dropdown = 'User Chart';
+      this.tabArray = ['Response','User Chart', 'Zone Chart'];
     }
     else if(val === "videoname"){
       this.text_from_dropdown = 'Enter Video Name : ';
-      this.button_from_dropdown = 'Video Chart';
+      this.tabArray = ['Response','Video Chart'];
     }
     else if(val === "instructor"){
       this.text_from_dropdown = 'Enter Instructor ID and Name : ';
-      this.button_from_dropdown = 'Instructor Chart';
+      this.tabArray = ['Response','Instructor Chart'];
     }
     else if(val === "foci"){
       this.text_from_dropdown = 'Enter Foci : ';
+      this.tabArray = ['Response'];
     }
     else if(val === "category"){
       this.text_from_dropdown = 'Enter Category : ';
+      this.tabArray = ['Response'];
     }
     else if(val === "equipment"){
       this.text_from_dropdown = 'Enter Equipment : ';
+      this.tabArray = ['Response'];
     }
     else if(val === "overall"){
-      this.button_from_dropdown = 'Zone Trend Chart';
+      this.tabArray = ['Response','Zone Trend Chart', 'Trend Pie Chart'];
     }
   }
 }

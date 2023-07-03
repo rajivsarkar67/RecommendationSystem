@@ -3,38 +3,29 @@
            <div class="main_section">
                <h1 class="white_text">Recommendation Engine</h1>
                <p>
-                   <label class="white_text">Select an option:</label>
+                   <label class="white_text">Search By:</label>
                    <select #myDropdown (change)="dropdownChanged(myDropdown.value)">
-                       <option value="user">UserId_wise</option>
-                       <option value="zone">ZoneId_wise</option>
-                       <option value="user_zone">UserId_ZoneId_wise</option>
-                       <option value="videoname">VideoName_wise</option>
-                       <option value="instructor">Instructor_wise</option>
-                       <option value="foci">Foci_wise</option>
-                       <option value="category">Category_wise</option>
-                       <option value="equipment">Equipment_wise</option>
+                       <option value="user">User ID</option>
+                       <option value="zone">Zone ID</option>
+                       <option value="user_zone">User ID and Zone ID</option>
+                       <option value="videoname">Video Name</option>
+                       <option value="instructor">Instructor</option>
+                       <option value="foci">Foci</option>
+                       <option value="category">Category</option>
+                       <option value="equipment">Equipment</option>
                        <option value="overall">Overall Trend</option>
                    </select>
                </p>
                <!-- First set of input box and button -->
-               <div *ngIf="myDropdown.value !== 'overall'">
+               <div id="first_label" *ngIf="myDropdown.value !== 'overall'">
                    <label class="white_text">{{text_from_dropdown}}</label>
                    <input type="text">
-               </div>
-               <p>
-                   <button class="chart_btn" *ngIf="myDropdown.value !=='foci' && myDropdown.value !== 'category' && myDropdown.value !== 'equipment'">
-                       {{button_from_dropdown}}</button>
-               </p>
-               
+               </div>               
        
                <!-- Second set of input box and button -->
                <div *ngIf="myDropdown.value === 'user_zone'">
                    <label class="white_text">Enter Zone ID : </label>
                    <input type="text">
-               </div>
-               <div>
-                   <p><button class="chart_btn" *ngIf="myDropdown.value ==='overall'">Trend Pie Chart</button></p>
-                   <p><button class="chart_btn" *ngIf="myDropdown.value ==='user_zone'">Zone Chart</button></p>
                </div>
        
                <button class="submit_btn">Submit</button>
@@ -42,13 +33,11 @@
     </article>
     <div class="tabContainer">
         <div class="btnContainer">
-            <button class="tab_btn" (click)="selectedTab=1">Tab 1</button>
-            <button class="tab_btn" (click)="selectedTab=2">Tab 2</button>
-            <button class="tab_btn" (click)="selectedTab=3">Tab 3</button>
-            <button class="tab_btn" (click)="selectedTab=4">Tab 4</button>
+            <!-- <button class="tab_btn" [style.width.%]="100/(tabArray.length)" *ngFor="let button of tabArray" (click)="selectedTab=button">{{button}}</button> -->
+            <button class="tab_btn" *ngFor="let button of tabArray" (click)="selectedTab=button">{{button}}</button>
         </div>
         <div class="tabPanels">
-            <div class="panel_1" *ngIf="selectedTab === 1">
+            <div class="panel_1" *ngIf="selectedTab === 'Response'">
                 <div class="data_container" *ngFor="let data of convertedArray">
                     <p class="data_name">{{data.name}}</p>
                     <div class="data_list">
@@ -59,9 +48,12 @@
                     </div>
                 </div>
             </div>
-            <div class="panel_2" *ngIf="selectedTab === 2">Hello 2</div>
-            <div class="panel_3" *ngIf="selectedTab === 3">Hello 3</div>
-            <div class="panel_4" *ngIf="selectedTab === 4">Hello 4</div>
+            <div *ngIf="selectedTab === 'User Chart'">Panel for User Chart</div>
+            <div *ngIf="selectedTab === 'Zone Chart'">Panel for Zone Chart</div>
+            <div *ngIf="selectedTab === 'Video Chart'">Panel for Video Chart</div>
+            <div *ngIf="selectedTab === 'Instruction Chart'">Panel for Instruction Chart</div>
+            <div *ngIf="selectedTab === 'Zone Trend Chart'">Panel for Zone Trend Chart</div>
+            <div *ngIf="selectedTab === 'Trend Pie Chart'">Panel for Trend Pie Chart</div>
         </div>
     </div>
 </div>
