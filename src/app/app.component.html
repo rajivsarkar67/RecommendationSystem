@@ -48,7 +48,26 @@
                     </div>
                 </div>
             </div>
-            <div [style.display] = "selectedTab === 'User Chart'?'block':'none'">Panel for User Chart</div>
+            <div [style.display] = "selectedTab === 'User Chart'?'block':'none'">
+                <div style="display: grid; grid-template-columns: repeat(2,auto);">
+                    <div style="margin: 4rem 1rem;">
+                        <h3>User Intensity Level Graph</h3>
+                        <canvas id="user_chart_1"></canvas>
+                    </div>
+                    <div style="margin: 4rem 1rem;">
+                        <h3>User Foci Level Graph</h3>
+                        <canvas id="user_chart_2"></canvas>
+                    </div>
+                    <div style="margin: 4rem 1rem;">
+                        <h3>Watch Again Recommendations</h3>
+                        <canvas id="user_chart_3"></canvas>
+                    </div>
+                </div>
+                    <div style="margin: 4rem 1rem;">
+                        <h3>Video Watched by Similar Users</h3>
+                        <canvas id="user_chart_4"></canvas>
+                    </div>
+            </div>
             <div [style.display] = "selectedTab === 'Zone Chart'?'block':'none'">Panel for Zone Chart</div>
             <div [style.display] = "selectedTab === 'Video Chart'?'block':'none'">Panel for Video Chart</div>
             <div [style.display] = "selectedTab === 'Instructor Chart'?'block':'none'">Panel for Instruction Chart</div>
