@@ -21,12 +21,6 @@ export class AppComponent implements OnInit, AfterViewInit{
                   {'value': 'R1ZE 7: CORE K1LLER', 'img': 'https://thumbs.fod247.io/thumbnails/108f6e1c304706dcde274ff306450748.jpg'},
                   {'value': 'Hike-O-Vision Pinnacles High Peaks Trail Part One', 'img': 'https://thumbs.fod247.io/thumbnails/f00a16f927a786cb855c8ccf525aedcd.jpg'},
                   {'value': '60 min Yoga Sculpt', 'img': 'https://thumbs.fod247.io/thumbnails/d437c82f6308c77fba21db99e96d1420.jpg'},
-                  // {'value': 'Walking: 40 Min Power Walk w/ Meghan', 'img': True},
-                  // {'value': 'Rowing: 15 Min Fast & Furious Row w/ Toby', 'img': True},
-                  // {'value': 'Upper Body Breakdown', 'img': True},
-                  // {'value': 'Move With Meaning', 'img': True},
-                  // {'value': 'Cycling: 30 Min Country Rhythm Ride w/ Brinn', 'img': True},
-                  // {'value': 'Twist and Sculpt', 'img': True},
                   {'value': 'Dance Fit Fire', 'img': 'https://thumbs.fod247.io/thumbnails/d437c82f6308c77fba21db99e96d1420.jpg'}],
                   '2. Similar Users':
                   [{'value': '13428063 -- 0.6905288827950451', 'img': 'https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg'},
@@ -61,6 +55,46 @@ export class AppComponent implements OnInit, AfterViewInit{
                   'user_top_foci': {'labels': ['Yoga', 'Strength', 'Lower Body,Upper Body,Strength', 'Yoga,Strength', 'Lower Body,Upper Body,Yoga'], 'values': [12, 10, 4, 1, 1]},
                   'watch_again_videos_foci': {'labels': ['Yoga', 'Strength', 'Yoga,Strength', 'Lower Body,Upper Body,Strength', 'Lower Body,Upper Body,Yoga'], 'values': [2, 3, 0, 1, 1]},
                   'recommendations': {'labels': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], 'values': ['Kenta Seki: Hard Core Abs', 'R1ZE 7: CORE K1LLER', 'Hike-O-Vision Pinnacles High Peaks Trail Part One', '60 min Yoga Sculpt', 'Walking: 40 Min Power Walk w/ Meghan', 'Rowing: 15 Min Fast & Furious Row w/ Toby', 'Upper Body Breakdown', 'Move With Meaning', 'Upper Body Breakdown', 'Move With Meaning', 'Cycling: 30 Min Country Rhythm Ride w/ Brinn', 'Twist and Sculpt', 'Dance Fit Fire', 'Move With Meaning', 'Dance Fit Fire', 'Walking: 40 Min Power Walk w/ Meghan', 'Walking: 40 Min Power Walk w/ Meghan', 'Move With Meaning', 'Move With Meaning', 'Dance Fit Fire', 'Upper Body Breakdown', 'Upper Body Breakdown', 'Upper Body Breakdown', 'Move With Meaning']}}]}]}];
+
+  zoneData: any = [{'Response':
+                  {'1. Recommendation':
+                  [{'value': 'Kenta Seki: Hard Core Abs', 'img': 'https://thumbs.fod247.io/thumbnails/d10cb801004dc309571027156eed5322.jpg'},
+                  {'value': 'R1ZE 7: CORE K1LLER', 'img': 'https://thumbs.fod247.io/thumbnails/108f6e1c304706dcde274ff306450748.jpg'},
+                  {'value': 'Hike-O-Vision Pinnacles High Peaks Trail Part One', 'img': 'https://thumbs.fod247.io/thumbnails/f00a16f927a786cb855c8ccf525aedcd.jpg'},
+                  {'value': '60 min Yoga Sculpt', 'img': 'https://thumbs.fod247.io/thumbnails/d437c82f6308c77fba21db99e96d1420.jpg'},
+                  {'value': 'Dance Fit Fire', 'img': 'https://thumbs.fod247.io/thumbnails/d437c82f6308c77fba21db99e96d1420.jpg'}],
+                  '2. Similar Users':
+                  [{'value': '13428063 -- 0.6905288827950451', 'img': 'https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg'},
+                  {'value': '13429617 -- 0.6905288827950451', 'img': 'https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg'},
+                  {'value': '13434631 -- 0.6905288827950451', 'img': 'https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg'},
+                  {'value': '13432988 -- 0.6773573041696719', 'img': 'https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg'},
+                  {'value': '13383901 -- 0.6623665942639567', 'img': 'https://images.pexels.com/photos/2827392/pexels-photo-2827392.jpeg'}],
+                  '3. Watch Again Videos':
+                  [{'value': '35 min Yoga Sculpt Workout', 'img': 'https://thumbs.fod247.io/thumbnails/d8bfed4f4b68b2a46d56631f3cbdd15e.jpg'},
+                  {'value': '30 min Yoga Sculpt with Dumbbells','img': 'https://thumbs.fod247.io/thumbnails/3e9829c29ddaa372a3f525dbcc757a23.jpg'},
+                  {'value': 'Kenta Seki: Hard Core Abs', 'img': 'https://thumbs.fod247.io/thumbnails/d10cb801004dc309571027156eed5322.jpg'},
+                  {'value': 'Kenta Seki: Fusion 15 - Core', 'img': 'https://thumbs.fod247.io/thumbnails/c1b8931ca47aa085449ce096565eb662.jpg'},
+                  {'value': '15 min Total Body Barre', 'img': 'https://thumbs.fod247.io/thumbnails/f6c78ef7335664c804ddd88fe3eb4132.jpg'},
+                  {'value': 'R1ZE 7: CORE K1LLER', 'img': 'https://thumbs.fod247.io/thumbnails/108f6e1c304706dcde274ff306450748.jpg'},
+                  {'value': 'M1ND 10: FULL BODY', 'img': 'https://thumbs.fod247.io/thumbnails/def845b45f27f93d090eab9824604d7b.jpg'}],
+                  '4. Actual Response':
+                  [{'value': '60 min Yoga Sculpt', 'img': 'https://thumbs.fod247.io/thumbnails/d437c82f6308c77fba21db99e96d1420.jpg'},
+                  {'value': '35 min Yoga Sculpt Workout', 'img': 'https://thumbs.fod247.io/thumbnails/d8bfed4f4b68b2a46d56631f3cbdd15e.jpg'},
+                  {'value': '15 min Yoga Stretch for Sore Muscles', 'img': 'https://thumbs.fod247.io/thumbnails/c8581bec991a017604a9509bd2ba40de.jpg'},
+                  {'value': '30 min Yoga Sculpt with Dumbbells', 'img': 'https://thumbs.fod247.io/thumbnails/3e9829c29ddaa372a3f525dbcc757a23.jpg'},
+                  {'value': '10 min Stretch Routine - Day 7', 'img': 'https://thumbs.fod247.io/thumbnails/4d2f356d7445f1348abe52fbc0b08957.jpg'},
+                  {'value': 'Kenta Seki: Hard Core Abs', 'img': 'https://thumbs.fod247.io/thumbnails/d10cb801004dc309571027156eed5322.jpg'},
+                  {'value': '57 Min Abs Workout | Plank & Core Moves', 'img': 'https://thumbs.fod247.io/thumbnails/121755a533266c1f794767519e2e5f25.jpg'},
+                  {'value': 'Kenta Seki: Fusion 15 - Core', 'img': 'https://thumbs.fod247.io/thumbnails/c1b8931ca47aa085449ce096565eb662.jpg'},
+                  {'value': '15 min Total Body Barre', 'img': 'https://thumbs.fod247.io/thumbnails/f6c78ef7335664c804ddd88fe3eb4132.jpg'},
+                  {'value': '60 min No Equipment Yoga Sculpt Workout', 'img': 'https://thumbs.fod247.io/thumbnails/c271ad8c89081e87996522d3a2287216.jpg'},
+                  {'value': 'R1ZE 7: CORE K1LLER', 'img': 'https://thumbs.fod247.io/thumbnails/108f6e1c304706dcde274ff306450748.jpg'},
+                  {'value': 'M1ND 10: FULL BODY', 'img': 'https://thumbs.fod247.io/thumbnails/def845b45f27f93d090eab9824604d7b.jpg'}]},
+                  'Graph':
+                  [{'Zone chart':
+                  [{'zone_top_intensity': {'labels': ['Standard', 'Flex', 'Easy'], 'values': [5, 2, 1]},
+                  'similar_zone_graph': {'labels': ['Morgan Ridge Apartments', 'Lansdale Area YMCA', 'Post Centennial Park Apartments', 'Fitness 1440 - Martin', 'Marriott Opelika'], 'values': [0.7167823027758217, 0.6671731862098226, 0.6490176320842918, 0.6251288671722571, 0.6239828845772188]},
+                  'recommendations': {'labels': [1, 2, 3, 4, 5], 'values': ['20-Minute Pilates 101 Workout', 'Cardio Followed by Strength', 'Cycling: 30 Min Beg Rhythm Ride w/ Meghan', 'M1ND 6: STEP', 'SH1FT 41: BEAST']}}]}]}];
 
   overallData: any = [{'Response':
                   {'1. Trending Videos':
@@ -159,15 +193,19 @@ export class AppComponent implements OnInit, AfterViewInit{
       this.tabArray = ['Response'];
     }
     else if(val === "overall"){
-      this.tabArray = ['Response','Zone Trend Chart', 'Trend Pie Chart'];
+      // this.tabArray = ['Response','Zone Trend Chart', 'Trend Pie Chart'];
+      this.tabArray = ['Response', 'Trend Pie Chart'];
     }
   }
 
   generateGraph(button){
-
     this.selectedTab = button;
+
     if(button === 'User Chart'){
       this.createUserChart();
+    }
+    if(button === 'Zone Chart'){
+      this.createZoneChart();
     }
     if(button === 'Trend Pie Chart'){
       this.createTrendPieChart();
@@ -287,6 +325,113 @@ export class AppComponent implements OnInit, AfterViewInit{
         datasets: [{
           label: '# of Votes',
           data: this.userData[0]['Graph'][0]['User chart'][0]['recommendations']['labels'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+  }
+
+  createZoneChart(){
+    new Chart("zone_chart_1", {
+      type: 'bar',
+      data: {
+        labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['zone_top_intensity']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['zone_top_intensity']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    new Chart("zone_chart_2", {
+      type: 'bar',
+      data: {
+        labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['recommendations']['values'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['recommendations']['labels'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    new Chart("zone_chart_3", {
+      type: 'bar',
+      data: {
+        labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['similar_zone_graph']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['similar_zone_graph']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',

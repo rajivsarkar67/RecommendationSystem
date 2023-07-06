@@ -33,8 +33,7 @@
     </article>
     <div class="tabContainer">
         <div class="btnContainer">
-            <!-- <button class="tab_btn" [style.width.%]="100/(tabArray.length)" *ngFor="let button of tabArray" (click)="selectedTab=button">{{button}}</button> -->
-            <button class="tab_btn" *ngFor="let button of tabArray" (click)="generateGraph(button);">{{button}}</button>
+            <button class="tab_btn" [style.backgroundColor]="selectedTab === button? '#52e155':''" *ngFor="let button of tabArray" (click)="generateGraph(button);">{{button}}</button>
         </div>
         <div class="tabPanels">
             <div class="panel_1" [style.display] = "selectedTab === 'Response'?'block':'none'">
@@ -63,12 +62,27 @@
                         <canvas id="user_chart_3"></canvas>
                     </div>
                 </div>
-                    <div style="margin: 4rem 1rem;">
-                        <h3>Video Watched by Similar Users</h3>
-                        <canvas id="user_chart_4"></canvas>
-                    </div>
+                <div style="margin: 4rem 1rem;">
+                    <h3>Video Watched by Similar Users</h3>
+                    <canvas id="user_chart_4"></canvas>
+                </div>
             </div>
-            <div [style.display] = "selectedTab === 'Zone Chart'?'block':'none'">Panel for Zone Chart</div>
+            <div [style.display] = "selectedTab === 'Zone Chart'?'block':'none'">
+                <div style="display: grid; grid-template-columns: repeat(2,auto);">
+                    <div style="margin: 4rem 1rem;">
+                        <h3>Zone Intensity Level Graph</h3>
+                        <canvas id="zone_chart_1"></canvas>
+                    </div>
+                    <div style="margin: 4rem 1rem;">
+                        <h3>Similar Zone Recommendations</h3>
+                        <canvas id="zone_chart_2"></canvas>
+                    </div>
+                    <div style="margin: 4rem 1rem;">
+                        <h3>Similar Zone</h3>
+                        <canvas id="zone_chart_3"></canvas>
+                    </div>
+                </div>
+            </div>
             <div [style.display] = "selectedTab === 'Video Chart'?'block':'none'">Panel for Video Chart</div>
             <div [style.display] = "selectedTab === 'Instructor Chart'?'block':'none'">Panel for Instruction Chart</div>
             <div [style.display] = "selectedTab === 'Zone Trend Chart'?'block':'none'">Panel for Zone Trend Chart</div>
