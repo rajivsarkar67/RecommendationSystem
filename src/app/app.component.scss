@@ -1,5 +1,5 @@
 .main-wrapper {
-    font-family: cursive;
+    font-family: sans-serif;
 
     .white_text{
         color: #ffffff;
@@ -68,6 +68,7 @@
                 // grid-gap: 1rem;
             }
             .data{
+                height: 17rem;
                 margin: 0 1rem 2rem 1rem;
                 border: 1px solid #777;
                 border-radius: 1rem;
