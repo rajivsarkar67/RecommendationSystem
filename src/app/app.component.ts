@@ -1,17 +1,19 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js/auto';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit{
+export class AppComponent implements OnInit{
   title = 'RecommendationSystem';
   text_from_dropdown = 'Enter User ID : ';
-  selectedTab = 'Response';
+  selectedTab = '';
   convertedArray: any = [];
-  tabArray = ['Response', 'User Chart'];
+  // tabArray = ['Response', 'User Chart'];
+  tabArray = [];
 
   chart1: any;
 
@@ -149,47 +151,87 @@ export class AppComponent implements OnInit, AfterViewInit{
                   {'labels': ['Upper Body Breakdown', 'Arms and Abs', 'Walking: 40 Min Power Walk w/ Meghan', 'SH1FT 46: LIIT', 'Move With Meaning', 'Rhythmic Reps', '30 min Compound Exercises with Low Impact Cardio', 'Getting in Tune', '30 min Plyometric Tabata Routine'],
                   'values': [0.08087706685837527, 0.04852624011502516, 0.03486700215672178, 0.02875629043853343, 0.026240115025161753, 0.02480230050323508, 0.024083393242271746, 0.02372393961179008, 0.02372393961179008]}}]}]}];
 
+  constructor(private apiService: ApiService){ }
+
   ngOnInit(): void {
+    this.apiService.getOverallData({}).subscribe(resp => {
+      console.log(resp);
+    })
     for(let pair of Object.entries(this.userData[0]['Response'])){
       this.convertedArray.push({name: pair[0], values: pair[1]});
     }
   }
 
-  ngAfterViewInit(): void {
-    this.createTrendPieChart();
-  }
-
   dropdownChanged(val: any){
     if(val === "user"){
+      this.selectedTab = '';
+      this.tabArray = [];
       this.text_from_dropdown = 'Enter User ID : ';
+    }
+    else if(val === "zone"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter Zone ID : ';
+    }
+    else if(val === "user_zone"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter User ID : ';
+    }
+    else if(val === "videoname"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter Video Name : ';
+    }
+    else if(val === "instructor"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter Instructor ID and Name : ';
+    }
+    else if(val === "foci"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter Foci : ';
+    }
+    else if(val === "category"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter Category : ';
+    }
+    else if(val === "equipment"){
+      this.selectedTab = '';
+      this.tabArray = [];
+      this.text_from_dropdown = 'Enter Equipment : ';
+    }
+    else if(val === "overall"){
+      this.selectedTab = '';
+      this.tabArray = [];
+    }
+  }
+
+  captureDetails(val: any){
+    if(val === "user"){
       this.tabArray = ['Response', 'User Chart'];
     }
     else if(val === "zone"){
-      this.text_from_dropdown = 'Enter Zone ID : ';
       this.tabArray = ['Response','Zone Chart'];
     }
     else if(val === "user_zone"){
-      this.text_from_dropdown = 'Enter User ID : ';
       this.tabArray = ['Response','User Chart', 'Zone Chart'];
     }
     else if(val === "videoname"){
-      this.text_from_dropdown = 'Enter Video Name : ';
       this.tabArray = ['Response','Video Chart'];
     }
     else if(val === "instructor"){
-      this.text_from_dropdown = 'Enter Instructor ID and Name : ';
       this.tabArray = ['Response','Instructor Chart'];
     }
     else if(val === "foci"){
-      this.text_from_dropdown = 'Enter Foci : ';
       this.tabArray = ['Response'];
     }
     else if(val === "category"){
-      this.text_from_dropdown = 'Enter Category : ';
       this.tabArray = ['Response'];
     }
     else if(val === "equipment"){
-      this.text_from_dropdown = 'Enter Equipment : ';
       this.tabArray = ['Response'];
     }
     else if(val === "overall"){
