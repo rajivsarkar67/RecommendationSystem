@@ -154,9 +154,11 @@ export class AppComponent implements OnInit{
   constructor(private apiService: ApiService){ }
 
   ngOnInit(): void {
-    this.apiService.getOverallData({}).subscribe(resp => {
+
+    this.apiService.getUserData({"UserId":13358533}).subscribe(resp => {
       console.log(resp);
     })
+    
     for(let pair of Object.entries(this.userData[0]['Response'])){
       this.convertedArray.push({name: pair[0], values: pair[1]});
     }
