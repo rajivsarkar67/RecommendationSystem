@@ -756,11 +756,112 @@ export class AppComponent implements OnInit{
   }
 
   createVideonameChart(){
-
+    new Chart("videoname_chart_1", {
+      type: 'bar',
+      data: {
+        labels: this.videonameData[0]['Graph'][0]['Video chart'][0]['frequently_watched_graph']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.videonameData[0]['Graph'][0]['Video chart'][0]['frequently_watched_graph']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    })
   }
 
   createInstructorChart(){
+    new Chart("instructor_chart_1", {
+      type: 'bar',
+      data: {
+        labels: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_videos']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_videos']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    })
 
+    new Chart("instructor_chart_2", {
+      type: 'bar',
+      data: {
+        labels: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_bill_bord_videos']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_bill_bord_videos']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    })
   }
 
   createTrendPieChart(){
