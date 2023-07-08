@@ -24,7 +24,23 @@ export class AppComponent implements OnInit{
   equipmentData: any = [];
   overallData: any = [];
 
-  chart1: any;
+  userChart1: any;
+  userChart2: any;
+  userChart3: any;
+  userChart4: any;
+  zoneChart1: any;
+  zoneChart2: any;
+  zoneChart3: any;
+  videonameChart1: any;
+  instructorChart1: any;
+  instructorChart2: any;
+  trendPieChart1: any;
+  trendPieChart2: any;
+  trendPieChart3: any;
+  trendPieChart4: any;
+  trendPieChart5: any;
+  
+
 
   userDataStatic: any = [{'Response':
                         {'1. Recommendation':
@@ -152,8 +168,10 @@ export class AppComponent implements OnInit{
                             [{'User chart':
                             [{'user_top_intensity':
                             {'labels': ['Standard', 'Advanced', 'Easy'], 'values': [19, 6, 3]},
-                            'user_top_foci': {'labels': ['Yoga', 'Strength', 'Lower Body,Upper Body,Strength', 'Yoga,Strength', 'Lower Body,Upper Body,Yoga'], 'values': [12, 10, 4, 1, 1]},
-                            'watch_again_videos_foci': {'labels': ['Yoga', 'Strength', 'Yoga,Strength', 'Lower Body,Upper Body,Strength', 'Lower Body,Upper Body,Yoga'], 'values': [2, 3, 0, 1, 1]},
+                            'user_top_foci':
+                            {'labels': ['Yoga', 'Strength', 'Lower Body,Upper Body,Strength', 'Yoga,Strength', 'Lower Body,Upper Body,Yoga'], 'values': [12, 10, 4, 1, 1]},
+                            'watch_again_videos_foci':
+                            {'labels': ['Yoga', 'Strength', 'Yoga,Strength', 'Lower Body,Upper Body,Strength', 'Lower Body,Upper Body,Yoga'], 'values': [2, 3, 0, 1, 1]},
                             'recommendations':
                             {'labels': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], 'values': ['Kenta Seki: Hard Core Abs', 'R1ZE 7: CORE K1LLER', 'Hike-O-Vision Pinnacles High Peaks Trail Part One', '60 min Yoga Sculpt', '50 min Total Body Routine with Weights', '50 min Total Body Routine with Weights', 'Jillian Michaels: Lift and Shred Workout 1', 'Jillian Michaels: Lift and Shred Workout 1', '50 min Total Body Routine with Weights', 'Jillian Michaels: Lift and Shred Workout 1', '30 min Hybrid Yoga with Weights', '20-Minute Abs & Core Finisher', '20-Minute Abs & Core Finisher', '20-Minute Abs & Core Finisher', '10-Minute Barre Arms & Abs Workout With DB', '50 min Total Body Routine with Weights', '20-Minute Abs & Core Finisher', '30 min Tabata with Weights', 'Walking: 20 Min Double Up Walk w/ Annelisa', '45 min Strength & Cardio Workout', 'lareines-lose-that-baby-fat-burn-baby-burn', '30-Minute Barre x Pilates Fusion', 'Walking: 30 Min Hi & Lo Power Walk w/ Eric', 'AmyÃ\x83Â\x82Ã\x82Â\x92s Tone & Shape No Gear 2']}}]},
                             {'Zone chart':
@@ -163,32 +181,6 @@ export class AppComponent implements OnInit{
                             {'labels': ['Morgan Ridge Apartments', 'Lansdale Area YMCA', 'Post Centennial Park Apartments', 'Fitness 1440 - Martin', 'Marriott Opelika'], 'values': [0.7167823027758217, 0.6671731862098226, 0.6490176320842918, 0.6251288671722571, 0.6239828845772188]},
                             'recommendations':
                             {'labels': [1, 2, 3, 4, 5], 'values': ['Non-Stop Cardio Kickboxing', 'Jillian Michaels: Kickbox Fast Fix 3', 'ChristineÃ\x82Â\x92s Ab Lab Advanced', '20-Minute HIIT Strength Workout', 'Kenta Seki: Fusion 15 - Total Body']}}]}]}];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   videonameDataStatic: any = [{'Response':
                              {'Video Recommendations for Kenta Seki: Hard Core Abs':
@@ -442,10 +434,18 @@ export class AppComponent implements OnInit{
     }
     else if(val === "user_zone"){
       this.tabArray = ['Response','User Chart', 'Zone Chart'];
+      // this.apiService.getUserZoneData({"ZoneName":"The Estates at River Pointe","UserId":13358533}).subscribe(resp => {
+      //   this.userZoneData = JSON.parse(resp);
+      //   this.createUserZoneChart();
+      //   this.createResponseChart('userZoneData');
+      // })
+      this.userZoneData =this.userZoneDataStatic;
+      this.createUserZoneChart();
+      this.createResponseChart('userZoneData');
     }
     else if(val === "videoname"){
       this.tabArray = ['Response','Video Chart'];
-      // this.apiService.getVideonameData({}).subscribe(resp => {
+      // this.apiService.getVideonameData({"VideoName" : "Kenta Seki: Hard Core Ab"}).subscribe(resp => {
       //   this.videonameData = JSON.parse(resp);
       //   this.createVideonameChart();
       //   this.createResponseChart('videonameData');
@@ -456,7 +456,7 @@ export class AppComponent implements OnInit{
     }
     else if(val === "instructor"){
       this.tabArray = ['Response','Instructor Chart'];
-      // this.apiService.getInstructorData({}).subscribe(resp => {
+      // this.apiService.getInstructorData({"InstructorId":"Kenta Seki"}).subscribe(resp => {
       //   this.instructorData = JSON.parse(resp);
       //   this.createInstructorChart();
       //   this.createResponseChart('instructorData');
@@ -467,7 +467,7 @@ export class AppComponent implements OnInit{
     }
     else if(val === "foci"){
       this.tabArray = ['Response'];
-      // this.apiService.getFociData({}).subscribe(resp => {
+      // this.apiService.getFociData({"Foci": "strength"}).subscribe(resp => {
       //   this.fociData = JSON.parse(resp);
       //   this.createResponseChart('fociData');
       // })
@@ -476,7 +476,7 @@ export class AppComponent implements OnInit{
     }
     else if(val === "category"){
       this.tabArray = ['Response'];
-      // this.apiService.getCategoryData({}).subscribe(resp => {
+      // this.apiService.getCategoryData({"Category" : "cycling"}).subscribe(resp => {
       //   this.categoryData = JSON.parse(resp);
       //   this.createResponseChart('categoryData');
       // })
@@ -485,7 +485,7 @@ export class AppComponent implements OnInit{
     }
     else if(val === "equipment"){
       this.tabArray = ['Response'];
-      // this.apiService.getEquipmentData({}).subscribe(resp => {
+      // this.apiService.getEquipmentData({"Equipment" : "mat"}).subscribe(resp => {
       //   this.equipmentData = JSON.parse(resp);
       //   this.createResponseChart('equipmentData');
       // })
@@ -507,7 +507,12 @@ export class AppComponent implements OnInit{
   }
 
   createUserChart(){
-    new Chart("user_chart_1", {
+    this.userChart1?.destroy();
+    this.userChart2?.destroy();
+    this.userChart3?.destroy();
+    this.userChart4?.destroy();
+
+    this.userChart1 = new Chart("user_chart_1", {
       type: 'bar',
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['labels'],
@@ -542,7 +547,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("user_chart_2", {
+    this.userChart2 = new Chart("user_chart_2", {
       type: 'bar',
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['user_top_foci']['labels'],
@@ -577,7 +582,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("user_chart_3", {
+    this.userChart3 = new Chart("user_chart_3", {
       type: 'bar',
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['labels'],
@@ -612,7 +617,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("user_chart_4", {
+    this.userChart4 = new Chart("user_chart_4", {
       type: 'bar',
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['recommendations']['values'],
@@ -649,7 +654,11 @@ export class AppComponent implements OnInit{
   }
 
   createZoneChart(){
-    new Chart("zone_chart_1", {
+    this.zoneChart1?.destroy();
+    this.zoneChart2?.destroy();
+    this.zoneChart3?.destroy();
+
+    this.zoneChart1 = new Chart("zone_chart_1", {
       type: 'bar',
       data: {
         labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['zone_top_intensity']['labels'],
@@ -684,7 +693,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("zone_chart_2", {
+    this.zoneChart2 = new Chart("zone_chart_2", {
       type: 'bar',
       data: {
         labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['recommendations']['values'],
@@ -719,7 +728,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("zone_chart_3", {
+    this.zoneChart3 = new Chart("zone_chart_3", {
       type: 'bar',
       data: {
         labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['similar_zone_graph']['labels'],
@@ -755,8 +764,264 @@ export class AppComponent implements OnInit{
     });
   }
 
+  createUserZoneChart(){
+    this.userChart1?.destroy();
+    this.userChart2?.destroy();
+    this.userChart3?.destroy();
+    this.userChart4?.destroy();
+    this.zoneChart1?.destroy();
+    this.zoneChart2?.destroy();
+    this.zoneChart3?.destroy();
+
+    this.userChart1 = new Chart("user_chart_1", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.userChart2 = new Chart("user_chart_2", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_foci']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_foci']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.userChart3 = new Chart("user_chart_3", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.userChart4 = new Chart("user_chart_4", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['recommendations']['values'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][0]['User chart'][0]['recommendations']['labels'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.zoneChart1 = new Chart("zone_chart_1", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['zone_top_intensity']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['zone_top_intensity']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.zoneChart2 = new Chart("zone_chart_2", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['recommendations']['values'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['recommendations']['labels'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.zoneChart3 = new Chart("zone_chart_3", {
+      type: 'bar',
+      data: {
+        labels: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['similar_zone_graph']['labels'],
+        datasets: [{
+          label: '# of Votes',
+          data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['similar_zone_graph']['values'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+  }
+
   createVideonameChart(){
-    new Chart("videoname_chart_1", {
+    this.videonameChart1?.destroy();
+    this.videonameChart1 = new Chart("videoname_chart_1", {
       type: 'bar',
       data: {
         labels: this.videonameData[0]['Graph'][0]['Video chart'][0]['frequently_watched_graph']['labels'],
@@ -793,7 +1058,10 @@ export class AppComponent implements OnInit{
   }
 
   createInstructorChart(){
-    new Chart("instructor_chart_1", {
+    this.instructorChart1?.destroy();
+    this.instructorChart2?.destroy();
+
+    this.instructorChart1 = new Chart("instructor_chart_1", {
       type: 'bar',
       data: {
         labels: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_videos']['labels'],
@@ -828,7 +1096,7 @@ export class AppComponent implements OnInit{
       }
     })
 
-    new Chart("instructor_chart_2", {
+    this.instructorChart2 = new Chart("instructor_chart_2", {
       type: 'bar',
       data: {
         labels: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_bill_bord_videos']['labels'],
@@ -865,7 +1133,13 @@ export class AppComponent implements OnInit{
   }
 
   createTrendPieChart(){
-    new Chart("trend_pie_chart_1", {
+    this.trendPieChart1?.destroy();
+    this.trendPieChart2?.destroy();
+    this.trendPieChart3?.destroy();
+    this.trendPieChart4?.destroy();
+    this.trendPieChart5?.destroy();
+
+    this.trendPieChart1 = new Chart("trend_pie_chart_1", {
     type: 'pie', //this denotes tha type of chart
 
     data: {// values on X-Axis
@@ -894,7 +1168,7 @@ export class AppComponent implements OnInit{
 
     });
 
-    new Chart("trend_pie_chart_2", {
+    this.trendPieChart2 = new Chart("trend_pie_chart_2", {
       type: 'pie', //this denotes tha type of chart
   
       data: {// values on X-Axis
@@ -923,7 +1197,7 @@ export class AppComponent implements OnInit{
   
     });
 
-    new Chart("trend_pie_chart_3", {
+    this.trendPieChart3 = new Chart("trend_pie_chart_3", {
       type: 'bar',
       data: {
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_countries_bar']['labels'],
@@ -958,7 +1232,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("trend_pie_chart_4", {
+    this.trendPieChart4 = new Chart("trend_pie_chart_4", {
       type: 'bar',
       data: {
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_category_bar']['labels'],
@@ -993,7 +1267,7 @@ export class AppComponent implements OnInit{
       }
     });
 
-    new Chart("trend_pie_chart_5", {
+    this.trendPieChart5 = new Chart("trend_pie_chart_5", {
       type: 'bar',
       data: {
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_equipment_bar']['labels'],

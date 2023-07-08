@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div [style.display] = "selectedTab === 'Instructor Chart'?'block':'none'">
-                <div style="display: grid; grid-template-columns: repeat(2,auto);">
+                <!-- <div style="display: grid; grid-template-columns: repeat(2,auto);"> -->
                     <div style="margin: 4rem 1rem;">
                         <h3>Video vs Counts</h3>
                         <canvas id="instructor_chart_1"></canvas>
@@ -99,7 +99,7 @@
                         <h3>Top Videos</h3>
                         <canvas id="instructor_chart_2"></canvas>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
             <div [style.display] = "selectedTab === 'Zone Trend Chart'?'block':'none'">Panel for Zone Trend Chart</div>
             <div [style.display] = "selectedTab === 'Trend Pie Chart'?'block':'none'">
