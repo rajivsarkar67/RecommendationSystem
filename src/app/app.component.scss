@@ -26,6 +26,11 @@
         margin: 0px auto;
         padding: 5px 0;
 
+        h1{
+            font-size: xx-large;
+            margin: 1rem 0rem;
+        }
+
         #first_label{
             margin-bottom: 1rem;
         }
@@ -53,7 +58,7 @@
                 color: white;
                 background-color: #888;
                 cursor: pointer;
-                font-weight: 700;
+                font-weight: 500;
                 font-size: large;
             }
         }
