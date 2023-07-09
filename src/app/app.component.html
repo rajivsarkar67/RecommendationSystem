@@ -1,5 +1,5 @@
 <div class="main-wrapper">
-    <article>
+    <article [ngStyle]="{height: selectedTab === ''? '93vh': '23rem'}">
            <div class="main_section">
                <h1 class="white_text">Recommendation Engine</h1>
                <p>
@@ -33,7 +33,7 @@
     </article>
     <div class="tabContainer">
         <div class="btnContainer">
-            <button class="tab_btn" [style.backgroundColor]="selectedTab === button? '#52e155':''" *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button>
+            <button class="tab_btn" [style.backgroundColor]="selectedTab === button? '#13bc5b':''" *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button>
         </div>
         <div class="tabPanels">
             <div class="panel_1" [style.display] = "selectedTab === 'Response'?'block':'none'">
@@ -42,7 +42,7 @@
                     <div class="data_list">
                         <div class="data" *ngFor="let value of data.values">
                             <img [src]="value.img">
-                            <span>{{value.value}}</span>
+                            <span>{{value.value.substr(0,35)}}</span>
                         </div>
                     </div>
                 </div>
