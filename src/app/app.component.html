@@ -33,7 +33,14 @@
     </article>
     <div class="tabContainer">
         <div class="btnContainer">
-            <button class="tab_btn" [style.backgroundColor]="selectedTab === button? '#13bc5b':''" *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button>
+            <!-- <button class="tab_btn" [style.backgroundColor]="selectedTab === button? '#13bc5b':''" *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button> -->
+            <button class="tab_btn"
+            [style.borderTop]="selectedTab === button? '0.1rem solid #888':''"
+            [style.borderLeft]="selectedTab === button? '0.1rem solid #888':''"
+            [style.borderRight]="selectedTab === button? '0.1rem solid #888':''"
+            [style.borderBottom]="selectedTab === button? 'none':''"
+            [style.color]="selectedTab === button? '#13bc5b':''"
+             *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button>
         </div>
         <div class="tabPanels">
             <div class="panel_1" [style.display] = "selectedTab === 'Response'?'block':'none'">

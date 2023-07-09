@@ -10,10 +10,11 @@
         font-size: large;
     }
 
-    width: 100%;
+    width: 85%;
     margin: 0 auto;
     article {
         margin: 0 auto;
+        border-radius: 0.8rem;
         background: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1l)
         ;
         background-repeat: no-repeat;
@@ -39,7 +40,7 @@
             height: 2rem;
             border-radius: 0.4rem;
             border: none;
-            width: 10rem;
+            width: 14rem;
         }
     }
 
@@ -50,13 +51,14 @@
             display: flex;
             .tab_btn{
                 text-align: center;
-                height: 2.5rem;
-                // width: -webkit-fill-available;
-                width: 32%;
-                border: 0.1rem solid white;
+                height: 2.2rem;
+                width: 20%;
+                // border: 0.1rem solid white;
                 border-radius: 0.2rem;
-                color: white;
-                background-color: #888;
+                // color: white;
+                // background-color: #888;
+                border: none;
+                border-bottom: 0.1rem solid #888;
                 cursor: pointer;
                 font-weight: 500;
                 font-size: large;
@@ -65,7 +67,8 @@
 
         .data_container{
             background-color: white;
-            border: 1px solid #777;
+            border: 1px solid #aaa;
+            border-radius: 0.4rem;
             margin: 0 0 1rem 0;
             box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
             .data_name{
@@ -77,23 +80,26 @@
                 grid-template-columns : repeat(5, auto);
             }
             .data{
-                height: 17rem;
+                height: 11rem;
                 margin: 0 1rem 2rem 1rem;
-                border: 1px solid #777;
+                border: 1px solid #aaa;
                 border-radius: 1rem;
                 box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 
                 img{
                     width: 100%;
-                    height: 80%;
+                    height: 75%;
                     object-fit: cover;
                     overflow: hidden;
-                    border-radius: 1rem;
+                    border-top-left-radius: 1rem;
+                    border-top-right-radius: 1rem;
                 }
 
                 span{
                     display: inline-block;
                     margin: 0 1rem 0 1rem;
+                    font-size: small;
+                    font-weight: 600;
                 }
             }
         }
@@ -103,7 +109,7 @@
 .submit_btn{
     margin-top: 1.5rem;
     height: 2rem;
-    width: 10rem;
+    width: 8rem;
     font-size: larger;
     background: #13bc5b;
     color: white;
