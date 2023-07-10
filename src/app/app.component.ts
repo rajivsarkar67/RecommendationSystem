@@ -10,6 +10,7 @@ import { ApiService } from './api.service';
 export class AppComponent implements OnInit{
   title = 'RecommendationSystem';
   text_from_dropdown = 'Enter User ID : ';
+  showMainWrapper:boolean=false;
   selectedTab = '';
   convertedArray: any = [];
   // tabArray = ['Response', 'User Chart'];
@@ -410,6 +411,7 @@ export class AppComponent implements OnInit{
   }
 
   captureDetails(val: any){
+    this.showMainWrapper =  true;
     this.selectedTab = 'Response';
     if(val === "user"){
       this.tabArray = ['Response', 'User Chart'];

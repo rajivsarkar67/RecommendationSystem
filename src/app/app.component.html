@@ -1,6 +1,49 @@
-<div class="main-wrapper">
+
+<section class="top-section" [style.height]="!showMainWrapper?'100vh':'65vh'" [style.transition]="!showMainWrapper?'all ease 0.2s':'all ease 0.2s'">
+    <div class="main-wrapper">
+        <article [style.height]="'25rem'">
+            <div class="main-section">
+                <h2 class="form-title">Recommendation Engine</h2>
+                <div class="form-field">
+                    <label class="label-name">Search By:</label>
+                    <select #myDropdown (change)="dropdownChanged(myDropdown.value)">
+                        <option value="user">User ID</option>
+                        <option value="zone">Zone ID</option>
+                        <option value="user_zone">User ID and Zone ID</option>
+                        <option value="videoname">Video Name</option>
+                        <option value="instructor">Instructor</option>
+                        <option value="foci">Foci</option>
+                        <option value="category">Category</option>
+                        <option value="equipment">Equipment</option>
+                        <option value="overall">Overall Trend</option>
+                    </select>
+                </div>
+                <!-- First set of input box and button -->
+                <div id="first_label" *ngIf="myDropdown.value !== 'overall'" class="form-field">
+                    <label class="lable-input">{{text_from_dropdown}}</label>
+                    <input type="text">
+                </div>               
+        
+                <!-- Second set of input box and button -->
+                <div *ngIf="myDropdown.value === 'user_zone'">
+                    <label class="white_text">Enter Zone ID : </label>
+                    <input type="text">
+                </div>
+        
+                <button class="submit_btn" (click)="captureDetails(myDropdown.value)">Submit</button>
+            </div>
+     </article>
+     <div class="main-text">
+        <h1 >
+            Welcome Message  here 
+        </h1>
+     </div>
+    </div>
+</section>
+
+<div class="main-wrapper" [style.display]="showMainWrapper?'block':'none'">
     <!-- <article [ngStyle]="{height: selectedTab === ''? '93vh': '25rem'}"> -->
-    <article [style.height]="'25rem'">
+    <!-- <article [style.height]="'25rem'">
            <div class="main_section">
                <h1 class="white_text">Recommendation Engine</h1>
                <p>
@@ -17,13 +60,12 @@
                        <option value="overall">Overall Trend</option>
                    </select>
                </p>
-               <!-- First set of input box and button -->
                <div id="first_label" *ngIf="myDropdown.value !== 'overall'">
                    <label class="white_text">{{text_from_dropdown}}</label>
                    <input type="text">
                </div>               
        
-               <!-- Second set of input box and button -->
+              
                <div *ngIf="myDropdown.value === 'user_zone'">
                    <label class="white_text">Enter Zone ID : </label>
                    <input type="text">
@@ -31,30 +73,25 @@
        
                <button class="submit_btn" (click)="captureDetails(myDropdown.value)">Submit</button>
            </div>
-    </article>
-    <div class="no_data" *ngIf="selectedTab === ''">
+    </article> -->
+    <!-- <div class="no_data" *ngIf="selectedTab === ''">
         <p>
             Enter a value and click on the submit button to see some data!
         </p>
-    </div>
-    <div class="tabContainer">
+    </div> -->
+    <div class="tab-container">
         <!-- [style.color]="selectedTab === button? '#13bc5b':''" -->
-        <ul class="btnContainer">
+        <ul class="btn-container">
             <li class="tab_btn" *ngFor="let tab of tabArray" (click)="selectedTab = tab;"
-                [style.color]="selectedTab === tab? '#13bc5b':''"
-                [style.textDecoration]="selectedTab === tab? 'underline':''"
+                [style.color]="selectedTab === tab? '#fff':''"
+                [style.background]="selectedTab === tab? '#ffba00':''"
                 [style.borderBottom]="selectedTab === tab? 'none':''"
-                [style.borderLeft]="selectedTab === tab? '0.15rem solid #aaa':''"
-                [style.borderRight]="selectedTab === tab? '0.15rem solid #aaa':''"
-                [style.borderTop]="selectedTab === tab? '0.15rem solid #aaa':''"
-                [style.borderTopLeftRadius]="selectedTab === tab? '0.4rem':''"
-                [style.borderTopRightRadius]="selectedTab === tab? '0.4rem':''"
                 >{{tab}}</li>
         </ul>
         <div class="tabPanels">
             <div id="panel_response" [style.display] = "selectedTab === 'Response'?'block':'none'">
                 <div class="data_container" *ngFor="let data of convertedArray">
-                    <p class="data_name">{{data.name}}</p>
+                    <h3 class="data_name">{{data.name}}</h3>
                     <div class="data_list">
                         <div class="data" *ngFor="let value of data.values">
                             <img [src]="value.img">

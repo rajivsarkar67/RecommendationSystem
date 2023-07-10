@@ -1,6 +1,82 @@
-.main-wrapper {
-    font-family: sans-serif;
 
+.top-section{
+    display: flex;
+    align-items: center;
+    // border-radius: 0.8rem;
+    background: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1l)
+    ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    .main-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .main-text{
+            width: 50%;
+            color: #fff;
+            font-size: 35px;
+            display: flex;
+            align-items: center;
+            h1{
+                text-shadow: 2px 1px 2px #000;
+            }
+        }
+        .main-section{
+            width: 390px;
+            background: #00000091;
+            height: 340px;
+            padding: 20px;
+            select{
+                width: 100%;
+                height: 40px;
+                padding: 10px;
+                border: 0;  
+                option{
+                    padding: 5px;
+                }
+            }
+            input{
+                width: 95%;
+                height: 40px;
+                padding: 0px 10px 0 10px;
+                border: 0;
+            }
+            .submit_btn{
+                margin-top: 1.5rem;
+                height: 40px;
+                width: 8rem;
+                font-size: 19px;
+                background: #ffba00;
+                color: white;
+                border-radius: 0;
+                border: 1px solid #ffe49b;
+                cursor: pointer;
+                font-weight: 500;
+            }
+            .form-title{
+                text-align: center;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 23px;
+                margin-top: 20px;
+            }
+            .form-field{
+                margin-top: 20px;
+            }
+            label{
+                color: #ffffff;
+                font-size: 16px;
+            }
+        }
+    }
+   
+}
+.main-wrapper {
+    // font-family: sans-serif;
+    #panel_response {
+        border: 1px solid rgb(255, 186, 0);
+    }
     .white_text{
         color: #ffffff;
     }
@@ -13,12 +89,12 @@
     width: 85%;
     margin: 0 auto;
     article {
-        margin: 0 auto 1rem auto;
-        border-radius: 0.8rem;
-        background: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1l)
-        ;
-        background-repeat: no-repeat;
-        background-size: cover;
+        // margin: 0 auto 1rem auto;
+        // border-radius: 0.8rem;
+        // background: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1l)
+        // ;
+        // background-repeat: no-repeat;
+        // background-size: cover;
 
         .main_section{
             width: 390px;
@@ -56,22 +132,22 @@
         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
     }
 
-    .tabContainer{
-        // margin-top: 1rem;
-        
-        .btnContainer{
-            display: flex;
-            // background-color: buttonFace;
-            height: 2rem;
-            align-items: center;
+    .tab-container{
+        margin-top: 50px;
+        margin-bottom: 50px;
+        .btn-container{
+            display: inline-block;
+            height: 37px;
             font-size: larger;
-            margin-bottom: 0;
-            padding-left: 0.4rem;
+            margin-bottom: -1px;
+            border: 1px solid rgb(255, 186, 0);
+            border-bottom: 0;
+            width: auto;
             .tab_btn{
                 list-style: none;
                 padding: 0.5rem 1rem 0.5rem 1rem;
                 cursor: pointer;
-                // border-bottom: 0.1rem solid #aaa;
+                display: inline-block;
             }
         }
 
@@ -79,40 +155,45 @@
             margin-top: 0.2rem;
             
             .panel{
-                border: 0.1rem solid #aaa;
-                border-radius: 0.4rem;
-                box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+                border: 1px solid rgb(255, 186, 0);
+                // border-radius: 0.4rem;
+                // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
             }
         }
 
         .data_container{
             background-color: white;
-            border: 1px solid #aaa;
-            border-radius: 0.4rem;
-            margin: 0 0 1rem 0;
-            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+            // border: 1px solid #aaa;
+            // border-radius: 0.4rem;
+            margin: 0;
+            // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
             .data_name{
                 font-size: x-large;
                 padding: 1rem 0 0 1rem;
+                margin-bottom: 15px;
+                font-weight: normal;
             }
             .data_list{
-                display: grid;
-                grid-template-columns : repeat(5, auto);
+                flex-wrap: wrap;
+                // justify-content: space-around;
+                display: flex;
+                width: 100%;
             }
             .data{
                 height: 11rem;
                 margin: 0 1rem 2rem 1rem;
                 border: 1px solid #aaa;
-                border-radius: 1rem;
-                box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-
+                border-radius: 7px;
+                // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+                width: 17%;
+                overflow: hidden;
                 img{
                     width: 100%;
                     height: 75%;
                     object-fit: cover;
                     overflow: hidden;
-                    border-top-left-radius: 1rem;
-                    border-top-right-radius: 1rem;
+                    // border-top-left-radius: 1rem;
+                    // border-top-right-radius: 1rem;
                 }
 
                 span{
