@@ -21,16 +21,18 @@
                 <!-- First set of input box and button -->
                 <div id="first_label" *ngIf="myDropdown.value !== 'overall'" class="form-field">
                     <label class="lable-input">{{text_from_dropdown}}</label>
-                    <input type="text">
+                    <input type="text" #firstTextBox [(ngModel)]="firstBox">
                 </div>               
         
                 <!-- Second set of input box and button -->
                 <div *ngIf="myDropdown.value === 'user_zone'" class="form-field" >
                     <label class="white_text">Enter Zone ID : </label>
-                    <input type="text">
+                    <input type="text" #secondTextBox [(ngModel)]="secondBox">
                 </div>
         
+                <!-- <button class="submit_btn" (click)="captureDetails(myDropdown.value, firstTextBox.value, secondTextBox.value)">Submit</button> -->
                 <button class="submit_btn" (click)="captureDetails(myDropdown.value)">Submit</button>
+
             </div>
      </article>
      <div class="main-text">
