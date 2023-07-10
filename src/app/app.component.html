@@ -32,21 +32,20 @@
                <button class="submit_btn" (click)="captureDetails(myDropdown.value)">Submit</button>
            </div>
     </article>
-    <div class="no_data" *ngIf="selectedTab === ''">
+    <!-- <div class="no_data" *ngIf="selectedTab === ''">
         <p>
             Enter a value and click on the submit button to see some data!
         </p>
-    </div>
+    </div> -->
     <div class="tabContainer">
         <!-- [style.color]="selectedTab === button? '#13bc5b':''" -->
         <ul class="btnContainer">
             <li class="tab_btn" *ngFor="let tab of tabArray" (click)="selectedTab = tab;"
-                [style.color]="selectedTab === tab? '#13bc5b':''"
+                [style.color]="selectedTab === tab? 'white':''"
+                [style.backgroundColor]="selectedTab === tab? 'rgba(46, 70, 203, 0.8)':''"
                 [style.textDecoration]="selectedTab === tab? 'underline':''"
                 [style.borderBottom]="selectedTab === tab? 'none':''"
-                [style.borderLeft]="selectedTab === tab? '0.15rem solid #aaa':''"
-                [style.borderRight]="selectedTab === tab? '0.15rem solid #aaa':''"
-                [style.borderTop]="selectedTab === tab? '0.15rem solid #aaa':''"
+
                 [style.borderTopLeftRadius]="selectedTab === tab? '0.4rem':''"
                 [style.borderTopRightRadius]="selectedTab === tab? '0.4rem':''"
                 >{{tab}}</li>
@@ -58,7 +57,7 @@
                     <div class="data_list">
                         <div class="data" *ngFor="let value of data.values">
                             <img [src]="value.img">
-                            <span>{{value.value.substr(0,35)}}</span>
+                            <span>{{value.value.substr(0,26)}}</span>
                         </div>
                     </div>
                 </div>
