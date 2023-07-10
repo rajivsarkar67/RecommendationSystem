@@ -49,14 +49,27 @@
         
         .btnContainer{
             display: flex;
-            background-color: buttonFace;
+            // background-color: buttonFace;
             height: 2rem;
             align-items: center;
             font-size: larger;
+            margin-bottom: 0;
+            padding-left: 0.4rem;
             .tab_btn{
                 list-style: none;
-                padding: 0 1rem 0 1rem;
+                padding: 0.5rem 1rem 0.5rem 1rem;
                 cursor: pointer;
+                // border-bottom: 0.1rem solid #aaa;
+            }
+        }
+
+        .tabPanels{
+            margin-top: 0.2rem;
+            
+            .panel{
+                border: 0.1rem solid #aaa;
+                border-radius: 0.4rem;
+                box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
             }
         }
 
