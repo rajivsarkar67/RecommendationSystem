@@ -416,14 +416,10 @@ export class AppComponent implements OnInit{
 
   // captureDetails(val: any, firstVal, secondVal){
     captureDetails(val: any){
-    this.showMainWrapper =  true;
-    this.selectedTab = 'Response';
     if(val === "user"){
-      // console.log('getting till here');
-      // console.log(firstVal);
-      // console.log(secondVal);
-      // console.log(this.firstBox);
-      // console.log(this.secondBox);
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response', 'User Chart'];
       this.apiService.getUserData({"UserId":this.firstBox}).subscribe(resp => {
         this.userData = JSON.parse(resp);
@@ -435,6 +431,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('userData');
     }
     else if(val === "zone"){
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response','Zone Chart'];
       this.apiService.getZoneData({"ZoneName":this.firstBox}).subscribe(resp => {
         this.zoneData = JSON.parse(resp);
@@ -446,6 +445,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('zoneData');
     }
     else if(val === "user_zone"){
+      if(!this.firstBox || !this.secondBox){
+        return;
+      }
       this.tabArray = ['Response','User Chart', 'Zone Chart'];
       this.apiService.getUserZoneData({"ZoneName":this.secondBox,"UserId":this.firstBox}).subscribe(resp => {
         this.userZoneData = JSON.parse(resp);
@@ -457,6 +459,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('userZoneData');
     }
     else if(val === "videoname"){
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response','Video Chart'];
       this.apiService.getVideonameData({"VideoName" : this.firstBox}).subscribe(resp => {
         this.videonameData = JSON.parse(resp);
@@ -468,6 +473,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('videonameData');
     }
     else if(val === "instructor"){
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response','Instructor Chart'];
       this.apiService.getInstructorData({"InstructorId":this.firstBox}).subscribe(resp => {
         this.instructorData = JSON.parse(resp);
@@ -479,6 +487,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('instructorData');
     }
     else if(val === "foci"){
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response'];
       this.apiService.getFociData({"Foci": this.firstBox}).subscribe(resp => {
         this.fociData = JSON.parse(resp);
@@ -488,6 +499,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('fociData');
     }
     else if(val === "category"){
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response'];
       this.apiService.getCategoryData({"Category" : this.firstBox}).subscribe(resp => {
         this.categoryData = JSON.parse(resp);
@@ -497,6 +511,9 @@ export class AppComponent implements OnInit{
       // this.createResponseChart('categoryData');
     }
     else if(val === "equipment"){
+      if(!this.firstBox){
+        return;
+      }
       this.tabArray = ['Response'];
       this.apiService.getEquipmentData({"Equipment" : this.firstBox}).subscribe(resp => {
         this.equipmentData = JSON.parse(resp);
@@ -517,6 +534,8 @@ export class AppComponent implements OnInit{
       // this.createTrendPieChart();
       // this.createResponseChart('overallData');
     }
+    this.showMainWrapper =  true;
+    this.selectedTab = 'Response';
   }
 
   createUserChart(){
