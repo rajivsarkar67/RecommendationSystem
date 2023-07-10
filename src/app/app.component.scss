@@ -13,7 +13,7 @@
     width: 85%;
     margin: 0 auto;
     article {
-        margin: 0 auto;
+        margin: 0 auto 1rem auto;
         border-radius: 0.8rem;
         background: url(https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1l)
         ;
@@ -45,23 +45,18 @@
     }
 
     .tabContainer{
-        margin-top: 1rem;
+        // margin-top: 1rem;
         
         .btnContainer{
             display: flex;
+            background-color: buttonFace;
+            height: 2rem;
+            align-items: center;
+            font-size: larger;
             .tab_btn{
-                text-align: center;
-                height: 2.2rem;
-                width: 20%;
-                // border: 0.1rem solid white;
-                border-radius: 0.2rem;
-                // color: white;
-                // background-color: #888;
-                border: none;
-                border-bottom: 0.1rem solid #888;
+                list-style: none;
+                padding: 0 1rem 0 1rem;
                 cursor: pointer;
-                font-weight: 500;
-                font-size: large;
             }
         }
 

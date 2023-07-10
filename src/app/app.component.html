@@ -32,16 +32,12 @@
            </div>
     </article>
     <div class="tabContainer">
-        <div class="btnContainer">
-            <!-- <button class="tab_btn" [style.backgroundColor]="selectedTab === button? '#13bc5b':''" *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button> -->
-            <button class="tab_btn"
-            [style.borderTop]="selectedTab === button? '0.1rem solid #888':''"
-            [style.borderLeft]="selectedTab === button? '0.1rem solid #888':''"
-            [style.borderRight]="selectedTab === button? '0.1rem solid #888':''"
-            [style.borderBottom]="selectedTab === button? 'none':''"
-            [style.color]="selectedTab === button? '#13bc5b':''"
-             *ngFor="let button of tabArray" (click)="selectedTab = button;">{{button}}</button>
-        </div>
+        <!-- [style.color]="selectedTab === button? '#13bc5b':''" -->
+        <ul class="btnContainer">
+            <li class="tab_btn" *ngFor="let tab of tabArray" (click)="selectedTab = tab;"
+                [style.color]="selectedTab === tab? '#13bc5b':''"
+                [style.textDecoration]="selectedTab === tab? 'underline':''">{{tab}}</li>
+        </ul>
         <div class="tabPanels">
             <div class="panel_1" [style.display] = "selectedTab === 'Response'?'block':'none'">
                 <div class="data_container" *ngFor="let data of convertedArray">
