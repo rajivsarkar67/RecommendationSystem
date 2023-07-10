@@ -1,5 +1,6 @@
 <div class="main-wrapper">
-    <article [ngStyle]="{height: selectedTab === ''? '93vh': '25rem'}">
+    <!-- <article [ngStyle]="{height: selectedTab === ''? '93vh': '25rem'}"> -->
+    <article [style.height]="'25rem'">
            <div class="main_section">
                <h1 class="white_text">Recommendation Engine</h1>
                <p>
@@ -31,6 +32,11 @@
                <button class="submit_btn" (click)="captureDetails(myDropdown.value)">Submit</button>
            </div>
     </article>
+    <div class="no_data" *ngIf="selectedTab === ''">
+        <p>
+            Enter a value and click on the submit button to see some data!
+        </p>
+    </div>
     <div class="tabContainer">
         <!-- [style.color]="selectedTab === button? '#13bc5b':''" -->
         <ul class="btnContainer">
@@ -59,78 +65,78 @@
             </div>
             <div id="panel_user" class="panel" [style.display] = "selectedTab === 'User Chart'?'block':'none'">
                 <div style="display: grid; grid-template-columns: repeat(2,auto);">
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>User Intensity Level Graph</h3>
                         <canvas id="user_chart_1"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>User Foci Level Graph</h3>
                         <canvas id="user_chart_2"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Watch Again Recommendations</h3>
                         <canvas id="user_chart_3"></canvas>
                     </div>
                 </div>
-                <div style="margin: 4rem 1rem;">
+                <div style="margin: 3rem 1rem;">
                     <h3>Video Watched by Similar Users</h3>
                     <canvas id="user_chart_4"></canvas>
                 </div>
             </div>
             <div id="panel_zone" class="panel" [style.display] = "selectedTab === 'Zone Chart'?'block':'none'">
                 <div style="display: grid; grid-template-columns: repeat(2,auto);">
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Zone Intensity Level Graph</h3>
                         <canvas id="zone_chart_1"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Similar Zone Recommendations</h3>
                         <canvas id="zone_chart_2"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Similar Zone</h3>
                         <canvas id="zone_chart_3"></canvas>
                     </div>
                 </div>
             </div>
             <div id="panel_videoname" class="panel" [style.display] = "selectedTab === 'Video Chart'?'block':'none'">
-                <div style="margin: 4rem 1rem;">
+                <div style="margin: 3rem 1rem;">
                     <h3>Videos Frequently Watched Together With</h3>
                     <canvas id="videoname_chart_1"></canvas>
                 </div>
             </div>
             <div id="panel_instructor" class="panel" [style.display] = "selectedTab === 'Instructor Chart'?'block':'none'">
-                <!-- <div style="display: grid; grid-template-columns: repeat(2,auto);"> -->
-                    <div style="margin: 4rem 1rem;">
+                <div style="display: grid; grid-template-columns: repeat(2,auto);">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Video vs Counts</h3>
                         <canvas id="instructor_chart_1"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Top Videos</h3>
                         <canvas id="instructor_chart_2"></canvas>
                     </div>
-                <!-- </div> -->
+                </div>
             </div>
             <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Zone Trend Chart'?'block':'none'">Panel for Zone Trend Chart</div>
             <div id="panel_trend_pie" class="panel" [style.display] = "selectedTab === 'Trend Pie Chart'?'block':'none'">
-                <div style="margin: 4rem 1rem;">
+                <div style="margin: 3rem 1rem;">
                     <h3>Zone Vs Count</h3>
                     <canvas id="trend_pie_chart_1"></canvas>
                 </div>
-                <div style="margin: 4rem 1rem;">
+                <div style="margin: 3rem 1rem;">
                     <h3>Trending Videos</h3>
                     <canvas id="trend_pie_chart_2"></canvas>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(2,auto);">
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Top 10 Zone Address Countries</h3>
                         <canvas id="trend_pie_chart_3"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Top 10 Categories</h3>
                         <canvas id="trend_pie_chart_4"></canvas>
                     </div>
-                    <div style="margin: 4rem 1rem;">
+                    <div style="margin: 3rem 1rem;">
                         <h3>Top 10 Equipments</h3>
                         <canvas id="trend_pie_chart_5"></canvas>
                     </div>
