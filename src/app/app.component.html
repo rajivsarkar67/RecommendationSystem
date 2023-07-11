@@ -15,6 +15,8 @@
                         <option value="foci">Foci</option>
                         <option value="category">Category</option>
                         <option value="equipment">Equipment</option>
+                        <option value="country">Country</option>
+                        <option value="state">State</option>
                         <option value="overall">Overall Trend</option>
                     </select>
                 </div>
@@ -44,45 +46,7 @@
 </section>
 
 <div class="main-wrapper" [style.display]="showMainWrapper?'block':'none'">
-    <!-- <article [ngStyle]="{height: selectedTab === ''? '93vh': '25rem'}"> -->
-    <!-- <article [style.height]="'25rem'">
-           <div class="main_section">
-               <h1 class="white_text">Recommendation Engine</h1>
-               <p>
-                   <label class="white_text">Search By:</label>
-                   <select #myDropdown (change)="dropdownChanged(myDropdown.value)">
-                       <option value="user">User ID</option>
-                       <option value="zone">Zone ID</option>
-                       <option value="user_zone">User ID and Zone ID</option>
-                       <option value="videoname">Video Name</option>
-                       <option value="instructor">Instructor</option>
-                       <option value="foci">Foci</option>
-                       <option value="category">Category</option>
-                       <option value="equipment">Equipment</option>
-                       <option value="overall">Overall Trend</option>
-                   </select>
-               </p>
-               <div id="first_label" *ngIf="myDropdown.value !== 'overall'">
-                   <label class="white_text">{{text_from_dropdown}}</label>
-                   <input type="text">
-               </div>               
-       
-              
-               <div *ngIf="myDropdown.value === 'user_zone'">
-                   <label class="white_text">Enter Zone ID : </label>
-                   <input type="text">
-               </div>
-       
-               <button class="submit_btn" (click)="captureDetails(myDropdown.value)">Submit</button>
-           </div>
-    </article> -->
-    <!-- <div class="no_data" *ngIf="selectedTab === ''">
-        <p>
-            Enter a value and click on the submit button to see some data!
-        </p>
-    </div> -->
     <div class="tab-container">
-        <!-- [style.color]="selectedTab === button? '#13bc5b':''" -->
         <ul class="btn-container">
             <li class="tab_btn" *ngFor="let tab of tabArray" (click)="selectedTab = tab;"
                 [style.color]="selectedTab === tab? '#fff':''"
@@ -156,6 +120,8 @@
                     </div>
                 </div>
             </div>
+            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Country Chart'?'block':'none'">Panel for Country Chart</div>
+            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'State Chart'?'block':'none'">Panel for State Chart</div>
             <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Zone Trend Chart'?'block':'none'">Panel for Zone Trend Chart</div>
             <div id="panel_trend_pie" class="panel" [style.display] = "selectedTab === 'Trend Pie Chart'?'block':'none'">
                 <div style="margin: 3rem 1rem;">

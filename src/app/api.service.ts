@@ -37,6 +37,14 @@ export class ApiService {
     return this.http.post(`http://127.0.0.1:5000/category`, payload);
   }
 
+  getCountryData(payload): Observable<any> {
+    return this.http.post(`http://127.0.0.1:5000/country`, payload);
+  }
+
+  getStateData(payload): Observable<any> {
+    return this.http.post(`http://127.0.0.1:5000/state`, payload);
+  }
+
   getEquipmentData(payload): Observable<any> {
     return this.http.post(`http://127.0.0.1:5000/equipment`, payload);
   }

@@ -23,6 +23,8 @@ export class AppComponent implements OnInit{
   fociData: any = [];
   categoryData: any = [];
   equipmentData: any = [];
+  countryData: any = [];
+  stateData: any = [];
   overallData: any = [];
   firstBox = '';
   secondBox = '';
@@ -414,8 +416,9 @@ export class AppComponent implements OnInit{
     }
   }
 
-  // captureDetails(val: any, firstVal, secondVal){
-    captureDetails(val: any){
+  // Getting called on submit button click
+  captureDetails(val: any){
+    console.log('submit button getting called');
     if(val === "user"){
       if(!this.firstBox){
         return;
@@ -521,6 +524,28 @@ export class AppComponent implements OnInit{
       })
       // this.equipmentData = this.equipmentDataStatic;
       // this.createResponseChart('equipmentData');
+    }
+    else if(val === "country"){
+      console.log('coming inside country if-else');
+      if(!this.firstBox){
+        return;
+      }
+      this.tabArray = ['Response', 'Country Chart'];
+      this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
+        this.countryData = JSON.parse(resp);
+        console.log(this.countryData);
+        this.createCountryChart();
+      })
+    }
+    else if(val === "state"){
+      if(!this.firstBox){
+        return;
+      }
+      this.tabArray = ['Response', 'State Chart'];
+      this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
+        this.stateData = JSON.parse(resp);
+        this.createStateChart();
+      })
     }
     else if(val === "overall"){
       // this.tabArray = ['Response','Zone Trend Chart', 'Trend Pie Chart'];
@@ -1162,6 +1187,14 @@ export class AppComponent implements OnInit{
         },
       }
     })
+  }
+
+  createCountryChart(){
+
+  }
+
+  createStateChart(){
+
   }
 
   createTrendPieChart(){
