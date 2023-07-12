@@ -120,9 +120,79 @@
                     </div>
                 </div>
             </div>
-            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Country Chart'?'block':'none'">Panel for Country Chart</div>
-            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'State Chart'?'block':'none'">Panel for State Chart</div>
-            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Zone Trend Chart'?'block':'none'">Panel for Zone Trend Chart</div>
+            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Country Chart'?'block':'none'">
+                <div style="display: grid; grid-template-columns: repeat(2,auto);">
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 5 States</h3>
+                        <canvas id="country_chart_1"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 10 Video Categories</h3>
+                        <canvas id="country_chart_2"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 10 Equipment by Video Counts</h3>
+                        <canvas id="country_chart_3"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 10 Most Watched Videos</h3>
+                        <canvas id="country_chart_4"></canvas>
+                    </div>
+                    <!-- <div style="margin: 3rem 1rem;">
+                        <h3>Video Progress Percentile by Top 10 States</h3>
+                        <canvas id="country_chart_5"></canvas>
+                    </div> -->
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Watch Count by Day</h3>
+                        <canvas id="country_chart_6"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Video Count by Time of Day</h3>
+                        <canvas id="country_chart_7"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Video Count by Hour</h3>
+                        <canvas id="country_chart_8"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'State Chart'?'block':'none'">
+                <div style="display: grid; grid-template-columns: repeat(2,auto);">
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 5 Zones</h3>
+                        <canvas id="state_chart_1"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 10 Video Categories</h3>
+                        <canvas id="state_chart_2"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 10 Equipment by Video Counts</h3>
+                        <canvas id="state_chart_3"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Top 10 Most Watched Videos</h3>
+                        <canvas id="state_chart_4"></canvas>
+                    </div>
+                    <!-- <div style="margin: 3rem 1rem;">
+                        <h3>Video Progress Percentile by Top 10 States</h3>
+                        <canvas id="state_chart_5"></canvas>
+                    </div> -->
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Watch Count by Day</h3>
+                        <canvas id="state_chart_6"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Video Count by Time of Day</h3>
+                        <canvas id="state_chart_7"></canvas>
+                    </div>
+                    <div style="margin: 3rem 1rem;">
+                        <h3>Video Count by Hour</h3>
+                        <canvas id="state_chart_8"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Zone Trend Chart'?'block':'none'">Panel for Zone Trend Chart</div> -->
             <div id="panel_trend_pie" class="panel" [style.display] = "selectedTab === 'Trend Pie Chart'?'block':'none'">
                 <div style="margin: 3rem 1rem;">
                     <h3>Zone Vs Count</h3>
