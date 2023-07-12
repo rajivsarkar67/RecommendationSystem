@@ -292,7 +292,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -327,7 +327,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['user_top_foci']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['user_top_foci']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -362,7 +362,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -397,7 +397,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['recommendations']['values'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['recommendations']['labels'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -438,7 +438,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['zone_top_intensity']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['zone_top_intensity']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -473,7 +473,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['recommendations']['values'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['recommendations']['labels'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -508,7 +508,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.zoneData[0]['Graph'][0]['Zone chart'][0]['similar_zone_graph']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['similar_zone_graph']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -553,7 +553,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -588,7 +588,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_foci']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_foci']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -623,7 +623,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -658,7 +658,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][0]['User chart'][0]['recommendations']['values'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['recommendations']['labels'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -693,7 +693,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['zone_top_intensity']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['zone_top_intensity']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -728,7 +728,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['recommendations']['values'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['recommendations']['labels'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -763,7 +763,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['similar_zone_graph']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['similar_zone_graph']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -801,7 +801,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.videonameData[0]['Graph'][0]['Video chart'][0]['frequently_watched_graph']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.videonameData[0]['Graph'][0]['Video chart'][0]['frequently_watched_graph']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -841,7 +841,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_videos']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_videos']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -876,7 +876,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_bill_bord_videos']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_bill_bord_videos']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -922,7 +922,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['top_states_bar']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['top_states_bar']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -957,7 +957,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['top_category_pie']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['top_category_pie']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -992,7 +992,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['top_equipment_pie']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['top_equipment_pie']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1027,7 +1027,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['trending_videos_pie']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['trending_videos_pie']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1057,47 +1057,48 @@ export class AppComponent implements OnInit{
       }
     });
 
-    // this.countryChart5 = new Chart("country_chart_5", {
-    //   type: 'bar',
-    //   data: {
-    //     labels: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['labels'],
-    //     datasets: [{
-    //       label: '# of Votes',
-    //       data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values'],
-    //       backgroundColor: [
-    //         'rgba(255, 99, 132, 0.5)',
-    //         'rgba(54, 162, 235, 0.5)',
-    //         'rgba(255, 206, 86, 0.5)',
-    //         'rgba(75, 192, 192, 0.5)',
-    //         'rgba(153, 102, 255, 0.5)',
-    //         'rgba(255, 159, 64, 0.5)'
-    //       ],
-    //       borderColor: [
-    //         'rgba(255, 99, 132, 1)',
-    //         'rgba(54, 162, 235, 1)',
-    //         'rgba(255, 206, 86, 1)',
-    //         'rgba(75, 192, 192, 1)',
-    //         'rgba(153, 102, 255, 1)',
-    //         'rgba(255, 159, 64, 1)'
-    //       ],
-    //       borderWidth: 1
-    //     }]
-    //   },
-    //   options: {
-    //     scales: {
-    //       y: {
-    //         beginAtZero: true
-    //       },
-    //     },
-    //   }
-    // });
+    this.countryChart5 = new Chart("country_chart_5", {
+      type: 'bar',
+      data: {
+        labels: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['labels'],
+        datasets: [{
+            label: 'Value25',
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values25'],
+        }, {
+            label: 'Value50',
+            backgroundColor: 'rgba(54, 162, 235, 1)',
+            data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values50'],
+        }, {
+            label: 'Value75',
+            backgroundColor: 'rgba(255, 206, 86, 1)',
+            data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values75'],
+        }],
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Stacked Bar chart for state wise data'
+            },
+        },
+        scales: {
+            x: {
+                stacked: true,
+            },
+            y: {
+                stacked: true
+            }
+        }
+      }
+    });
 
     this.countryChart6 = new Chart("country_chart_6", {
       type: 'bar',
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_day_country']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_day_country']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1132,7 +1133,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_time_day_country']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_time_day_country']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1167,7 +1168,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_time_hour_country']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_time_hour_country']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1213,7 +1214,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['top_zones_bar']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_zones_bar']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1248,7 +1249,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['top_category_pie']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_category_pie']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1283,7 +1284,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['top_equipment_pie']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_equipment_pie']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1318,7 +1319,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['trending_videos_pie']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['trending_videos_pie']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1348,47 +1349,48 @@ export class AppComponent implements OnInit{
       }
     });
 
-    // this.stateChart5 = new Chart("state_chart_5", {
-    //   type: 'bar',
-    //   data: {
-    //     labels: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['labels'],
-    //     datasets: [{
-    //       label: '# of Votes',
-    //       data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values'],
-    //       backgroundColor: [
-    //         'rgba(255, 99, 132, 0.5)',
-    //         'rgba(54, 162, 235, 0.5)',
-    //         'rgba(255, 206, 86, 0.5)',
-    //         'rgba(75, 192, 192, 0.5)',
-    //         'rgba(153, 102, 255, 0.5)',
-    //         'rgba(255, 159, 64, 0.5)'
-    //       ],
-    //       borderColor: [
-    //         'rgba(255, 99, 132, 1)',
-    //         'rgba(54, 162, 235, 1)',
-    //         'rgba(255, 206, 86, 1)',
-    //         'rgba(75, 192, 192, 1)',
-    //         'rgba(153, 102, 255, 1)',
-    //         'rgba(255, 159, 64, 1)'
-    //       ],
-    //       borderWidth: 1
-    //     }]
-    //   },
-    //   options: {
-    //     scales: {
-    //       y: {
-    //         beginAtZero: true
-    //       },
-    //     },
-    //   }
-    // });
+    this.stateChart5 = new Chart("state_chart_5", {
+      type: 'bar',
+      data: {
+        labels: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['labels'],
+        datasets: [{
+            label: 'Value25',
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values25'],
+        }, {
+            label: 'Value50',
+            backgroundColor: 'rgba(54, 162, 235, 1)',
+            data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values50'],
+        }, {
+            label: 'Value75',
+            backgroundColor: 'rgba(255, 206, 86, 1)',
+            data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values75'],
+        }],
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Stacked Bar chart for zone wise data'
+            },
+        },
+        scales: {
+            x: {
+                stacked: true,
+            },
+            y: {
+                stacked: true
+            }
+        }
+      }
+    });
 
     this.stateChart6 = new Chart("state_chart_6", {
       type: 'bar',
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['watch_day_states']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_day_states']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1423,7 +1425,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_day_states']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_day_states']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1458,7 +1460,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_hour_states']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_hour_states']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1559,7 +1561,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_countries_bar']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_countries_bar']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1594,7 +1596,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_category_bar']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_category_bar']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -1629,7 +1631,7 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_equipment_bar']['labels'],
         datasets: [{
-          label: '# of Votes',
+          label: 'Count',
           data: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_equipment_bar']['values'],
           backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
