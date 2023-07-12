@@ -142,13 +142,18 @@ export class AppComponent implements OnInit{
     else if(val === "equipment"){
       this.text_from_dropdown = 'Enter Equipment : ';
     }
+    else if(val === "country"){
+      this.text_from_dropdown = 'Enter Country : ';
+    }
+    else if(val === "state"){
+      this.text_from_dropdown = 'Enter State : ';
+    }
     else if(val === "overall"){
     }
   }
 
   // Getting called on submit button click
   captureDetails(val: any){
-    console.log('submit button getting called');
     if(val === "user"){
       if(!this.firstBox){
         return;
@@ -247,12 +252,12 @@ export class AppComponent implements OnInit{
         return;
       }
       this.tabArray = ['Country Chart'];
-      // this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
-      //   this.countryData = JSON.parse(resp);
-      //   this.createCountryChart();
-      // })
-      this.countryData = this.countryDataStatic;
-      this.createCountryChart();
+      this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
+        this.countryData = JSON.parse(resp);
+        this.createCountryChart();
+      })
+      // this.countryData = this.countryDataStatic;
+      // this.createCountryChart();
       this.selectedTab = 'Country Chart';
     }
     else if(val === "state"){
@@ -260,12 +265,12 @@ export class AppComponent implements OnInit{
         return;
       }
       this.tabArray = ['State Chart'];
-      // this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
-      //   this.stateData = JSON.parse(resp);
-      //   this.createStateChart();
-      // })
-      this.stateData = this.stateDataStatic;
-      this.createStateChart();
+      this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
+        this.stateData = JSON.parse(resp);
+        this.createStateChart();
+      })
+      // this.stateData = this.stateDataStatic;
+      // this.createStateChart();
       this.selectedTab = 'State Chart';
     }
     else if(val === "overall"){
@@ -1062,16 +1067,16 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['labels'],
         datasets: [{
-            label: 'Value25',
-            backgroundColor: 'rgba(255, 99, 132, 1)',
+            label: '25%',
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values25'],
         }, {
-            label: 'Value50',
-            backgroundColor: 'rgba(54, 162, 235, 1)',
+            label: '50%',
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values50'],
         }, {
-            label: 'Value75',
-            backgroundColor: 'rgba(255, 206, 86, 1)',
+            label: '75%',
+            backgroundColor: 'rgba(255, 206, 86, 0.7)',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values75'],
         }],
     },
@@ -1354,16 +1359,16 @@ export class AppComponent implements OnInit{
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['labels'],
         datasets: [{
-            label: 'Value25',
-            backgroundColor: 'rgba(255, 99, 132, 1)',
+            label: '25%',
+            backgroundColor: 'rgba(255, 99, 132, 0.7)',
             data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values25'],
         }, {
-            label: 'Value50',
-            backgroundColor: 'rgba(54, 162, 235, 1)',
+            label: '50%',
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
             data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values50'],
         }, {
-            label: 'Value75',
-            backgroundColor: 'rgba(255, 206, 86, 1)',
+            label: '75%',
+            backgroundColor: 'rgba(255, 206, 86, 0.7)',
             data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values75'],
         }],
     },
