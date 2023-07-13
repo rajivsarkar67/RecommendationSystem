@@ -7,50 +7,52 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
+  baseUrl = 'http://52.39.232.226:5000';
+
   constructor(private http: HttpClient) {}
 
   getUserData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/users_chart`, payload);
+    return this.http.post(`${this.baseUrl}/users_chart`, payload);
   }
 
   getZoneData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/zones_chart`, payload);
+    return this.http.post(`${this.baseUrl}/zones_chart`, payload);
   }
 
   getUserZoneData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/zone_user_chart`, payload);
+    return this.http.post(`${this.baseUrl}/zone_user_chart`, payload);
   }
 
   getVideonameData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/video_chart`, payload);
+    return this.http.post(`${this.baseUrl}/video_chart`, payload);
   }
 
   getInstructorData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/instructors_chart`, payload);
+    return this.http.post(`${this.baseUrl}/instructors_chart`, payload);
   }
 
   getFociData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/foci`, payload);
+    return this.http.post(`${this.baseUrl}/foci`, payload);
   }
 
   getCategoryData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/category`, payload);
+    return this.http.post(`${this.baseUrl}/category`, payload);
   }
 
   getCountryData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/country`, payload);
+    return this.http.post(`${this.baseUrl}/country`, payload);
   }
 
   getStateData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/state`, payload);
+    return this.http.post(`${this.baseUrl}/state`, payload);
   }
 
   getEquipmentData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/equipment`, payload);
+    return this.http.post(`${this.baseUrl}/equipment`, payload);
   }
 
   getOverallData(payload): Observable<any> {
-    return this.http.post(`http://127.0.0.1:5000/trending_videos`, payload);
+    return this.http.post(`${this.baseUrl}/trending_videos`, payload);
   }
   
 }
