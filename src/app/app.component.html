@@ -121,15 +121,15 @@
                 </div>
             </div>
             <div id="panel_zone_trend" class="panel" [style.display] = "selectedTab === 'Country Chart'?'block':'none'">
+                <div style="padding: 3rem 1rem;">
+                    <h3>{{firstBox==='ALL'? 'Top 5 Countries':'Top 5 States'}}</h3>
+                    <canvas id="country_chart_1"></canvas>
+                </div>
+                <div style="padding: 3rem 1rem;">
+                    <h3>Top 10 Video Categories</h3>
+                    <canvas id="country_chart_2"></canvas>
+                </div>
                 <div style="display: grid; grid-template-columns: 50% 50%;">
-                    <div style="padding: 3rem 1rem;">
-                        <h3>{{firstBox==='ALL'? 'Top 5 Countries':'Top 5 States'}}</h3>
-                        <canvas id="country_chart_1"></canvas>
-                    </div>
-                    <div style="padding: 3rem 1rem;">
-                        <h3>Top 10 Video Categories</h3>
-                        <canvas id="country_chart_2"></canvas>
-                    </div>
                     <div style="padding: 3rem 1rem;">
                         <h3>Top 10 Equipment by Video Counts</h3>
                         <canvas id="country_chart_3"></canvas>
