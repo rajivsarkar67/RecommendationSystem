@@ -122,7 +122,7 @@ export class AppComponent implements OnInit{
       this.text_from_dropdown = 'Enter User ID : ';
     }
     else if(val === "zone"){
-      this.text_from_dropdown = 'Enter Zone ID : ';
+      this.text_from_dropdown = 'Enter Zone Name : ';
     }
     else if(val === "user_zone"){
       this.text_from_dropdown = 'Enter User ID : ';
@@ -274,7 +274,6 @@ export class AppComponent implements OnInit{
       this.selectedTab = 'State Chart';
     }
     else if(val === "overall"){
-      // this.tabArray = ['Response','Zone Trend Chart', 'Trend Pie Chart'];
       this.tabArray = ['Response', 'Trend Pie Chart'];
       this.apiService.getOverallData({}).subscribe(resp => {
         this.overallData = JSON.parse(resp);
@@ -983,13 +982,7 @@ export class AppComponent implements OnInit{
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          },
-        },
-      }
+      options: {}
     });
 
     this.countryChart3 = new Chart("country_chart_3", {
@@ -1018,13 +1011,7 @@ export class AppComponent implements OnInit{
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          },
-        },
-      }
+      options: {}
     });
 
     this.countryChart4 = new Chart("country_chart_4", {
@@ -1053,13 +1040,7 @@ export class AppComponent implements OnInit{
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          },
-        },
-      }
+      options: {}
     });
 
     this.countryChart5 = new Chart("country_chart_5", {
@@ -1079,22 +1060,22 @@ export class AppComponent implements OnInit{
             backgroundColor: 'rgba(255, 206, 86, 0.7)',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values75'],
         }],
-    },
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Stacked Bar chart for state wise data'
-            },
-        },
-        scales: {
-            x: {
-                stacked: true,
-            },
-            y: {
-                stacked: true
-            }
-        }
+      },
+      options: {
+        // plugins: {
+        //     title: {
+        //         display: true,
+        //         text: 'Stacked Bar chart for state wise data'
+        //     },
+        // },
+        // scales: {
+        //     x: {
+        //         stacked: true,
+        //     },
+        //     y: {
+        //         stacked: true
+        //     }
+        // }
       }
     });
 
@@ -1250,7 +1231,7 @@ export class AppComponent implements OnInit{
     });
 
     this.stateChart2 = new Chart("state_chart_2", {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['top_category_pie']['labels'],
         datasets: [{
@@ -1275,17 +1256,11 @@ export class AppComponent implements OnInit{
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          },
-        },
-      }
+      options: {}
     });
 
     this.stateChart3 = new Chart("state_chart_3", {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['top_equipment_pie']['labels'],
         datasets: [{
@@ -1310,17 +1285,11 @@ export class AppComponent implements OnInit{
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          },
-        },
-      }
+      options: {}
     });
 
     this.stateChart4 = new Chart("state_chart_4", {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['trending_videos_pie']['labels'],
         datasets: [{
@@ -1345,13 +1314,7 @@ export class AppComponent implements OnInit{
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          },
-        },
-      }
+      options: {}
     });
 
     this.stateChart5 = new Chart("state_chart_5", {
@@ -1373,20 +1336,20 @@ export class AppComponent implements OnInit{
         }],
     },
     options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Stacked Bar chart for zone wise data'
-            },
-        },
-        scales: {
-            x: {
-                stacked: true,
-            },
-            y: {
-                stacked: true
-            }
-        }
+        // plugins: {
+        //     title: {
+        //         display: true,
+        //         text: 'Stacked Bar chart for zone wise data'
+        //     },
+        // },
+        // scales: {
+        //     x: {
+        //         stacked: true,
+        //     },
+        //     y: {
+        //         stacked: true
+        //     }
+        // }
       }
     });
 
@@ -1509,7 +1472,7 @@ export class AppComponent implements OnInit{
     data: {// values on X-Axis
       labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['zone_pie']['labels'],
         datasets: [{
-    label: 'My First Dataset',
+    label: '',
     data: this.overallData[0]['Graph'][0]['Pie chart'][0]['zone_pie']['values'],
     backgroundColor: [
       'rgba(255, 99, 132, 0.75)',
@@ -1538,7 +1501,7 @@ export class AppComponent implements OnInit{
       data: {// values on X-Axis
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['trending_pie']['labels'],
           datasets: [{
-      label: 'My First Dataset',
+      label: '',
       data: this.overallData[0]['Graph'][0]['Pie chart'][0]['trending_pie']['values'],
       backgroundColor: [
         'rgba(255, 99, 132, 0.75)',
