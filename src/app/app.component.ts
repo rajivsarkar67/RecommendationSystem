@@ -8,12 +8,12 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  backgroundColorArr = ['#e95b5c','#8ed1e6','#e8a34d','#4762a5','#1caa90','#f9da8d'];
   title = 'RecommendationSystem';
   text_from_dropdown = 'Enter User ID : ';
   showMainWrapper:boolean=false;
   selectedTab = '';
   convertedArray: any = [];
-  // tabArray = ['Response', 'User Chart'];
   tabArray = [];
   userData: any = [];
   zoneData: any = [];
@@ -252,12 +252,12 @@ export class AppComponent implements OnInit{
         return;
       }
       this.tabArray = ['Country Chart'];
-      this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
-        this.countryData = JSON.parse(resp);
-        this.createCountryChart();
-      })
-      // this.countryData = this.countryDataStatic;
-      // this.createCountryChart();
+      // this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
+      //   this.countryData = JSON.parse(resp);
+      //   this.createCountryChart();
+      // })
+      this.countryData = this.countryDataStatic;
+      this.createCountryChart();
       this.selectedTab = 'Country Chart';
     }
     else if(val === "state"){
@@ -265,12 +265,12 @@ export class AppComponent implements OnInit{
         return;
       }
       this.tabArray = ['State Chart'];
-      this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
-        this.stateData = JSON.parse(resp);
-        this.createStateChart();
-      })
-      // this.stateData = this.stateDataStatic;
-      // this.createStateChart();
+      // this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
+      //   this.stateData = JSON.parse(resp);
+      //   this.createStateChart();
+      // })
+      this.stateData = this.stateDataStatic;
+      this.createStateChart();
       this.selectedTab = 'State Chart';
     }
     else if(val === "overall"){
@@ -298,22 +298,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -333,22 +318,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['user_top_foci']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -368,22 +338,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -403,22 +358,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userData[0]['Graph'][0]['User chart'][0]['recommendations']['labels'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -444,22 +384,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['zone_top_intensity']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -479,22 +404,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['recommendations']['labels'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -514,22 +424,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.zoneData[0]['Graph'][0]['Zone chart'][0]['similar_zone_graph']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -559,22 +454,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_intensity']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -594,22 +474,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['user_top_foci']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -629,22 +494,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['watch_again_videos_foci']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -664,22 +514,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][0]['User chart'][0]['recommendations']['labels'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -699,22 +534,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['zone_top_intensity']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -734,22 +554,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['recommendations']['labels'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -769,22 +574,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.userZoneData[0]['Graph'][1]['Zone chart'][0]['similar_zone_graph']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -807,22 +597,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.videonameData[0]['Graph'][0]['Video chart'][0]['frequently_watched_graph']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -847,22 +622,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_videos']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -882,22 +642,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.instructorData[0]['Graph'][0]['Instructor chart'][0]['top_bill_bord_videos']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -928,22 +673,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['top_states_bar']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -957,28 +687,13 @@ export class AppComponent implements OnInit{
     });
 
     this.countryChart2 = new Chart("country_chart_2", {
-      type: 'pie',
+      type: 'bar',
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['top_category_pie']['labels'],
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['top_category_pie']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -992,26 +707,17 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['top_equipment_pie']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
-      options: {}
+      options: {
+        plugins: {
+          legend: {
+            position: 'left'
+          }
+        }
+      },
     });
 
     this.countryChart4 = new Chart("country_chart_4", {
@@ -1021,26 +727,17 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['trending_videos_pie']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
-      options: {}
+      options: {
+        plugins: {
+          legend: {
+            position: 'right'
+          }
+        }
+      }
     });
 
     this.countryChart5 = new Chart("country_chart_5", {
@@ -1062,20 +759,6 @@ export class AppComponent implements OnInit{
         }],
       },
       options: {
-        // plugins: {
-        //     title: {
-        //         display: true,
-        //         text: 'Stacked Bar chart for state wise data'
-        //     },
-        // },
-        // scales: {
-        //     x: {
-        //         stacked: true,
-        //     },
-        //     y: {
-        //         stacked: true
-        //     }
-        // }
       }
     });
 
@@ -1086,22 +769,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_day_country']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1121,22 +789,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_time_day_country']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1156,22 +809,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.countryData[0]['Graph'][0]['Country chart'][0]['watch_time_hour_country']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1203,20 +841,12 @@ export class AppComponent implements OnInit{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_zones_bar']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
@@ -1231,32 +861,34 @@ export class AppComponent implements OnInit{
     });
 
     this.stateChart2 = new Chart("state_chart_2", {
-      type: 'doughnut',
+      type: 'bar',
       data: {
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['top_category_pie']['labels'],
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_category_pie']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
       },
-      options: {}
+      options: {
+        plugins: {
+          legend: {
+            // title: {
+            //   display: true,
+            //   text: 'Legend Title',
+            // }
+            // position: 'right'
+          }
+        }
+      },
     });
 
     this.stateChart3 = new Chart("state_chart_3", {
@@ -1267,20 +899,12 @@ export class AppComponent implements OnInit{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_equipment_pie']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
@@ -1296,20 +920,12 @@ export class AppComponent implements OnInit{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['trending_videos_pie']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
@@ -1323,34 +939,19 @@ export class AppComponent implements OnInit{
         labels: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['labels'],
         datasets: [{
             label: '25%',
-            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            backgroundColor: '#e95b5c',
             data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values25'],
         }, {
             label: '50%',
-            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            backgroundColor: '#83d1e6',
             data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values50'],
         }, {
             label: '75%',
-            backgroundColor: 'rgba(255, 206, 86, 0.7)',
+            backgroundColor: '#e8a34d',
             data: this.stateData[0]['Graph'][0]['State chart'][0]['zones_video_percentile']['values75'],
         }],
     },
-    options: {
-        // plugins: {
-        //     title: {
-        //         display: true,
-        //         text: 'Stacked Bar chart for zone wise data'
-        //     },
-        // },
-        // scales: {
-        //     x: {
-        //         stacked: true,
-        //     },
-        //     y: {
-        //         stacked: true
-        //     }
-        // }
-      }
+    options: {}
     });
 
     this.stateChart6 = new Chart("state_chart_6", {
@@ -1361,20 +962,12 @@ export class AppComponent implements OnInit{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_day_states']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
@@ -1396,20 +989,12 @@ export class AppComponent implements OnInit{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_day_states']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
@@ -1431,20 +1016,12 @@ export class AppComponent implements OnInit{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_hour_states']['values'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
+            '#e95b5c',
+            '#8ed1e6',
+            '#e8a34d',
+            '#4762a5',
+            '#1caa90',
+            '#f9da8d'
           ],
           borderWidth: 1
         }]
@@ -1474,18 +1051,19 @@ export class AppComponent implements OnInit{
         datasets: [{
     label: '',
     data: this.overallData[0]['Graph'][0]['Pie chart'][0]['zone_pie']['values'],
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.75)',
-      'rgba(54, 162, 235, 0.75)',
-      'rgba(255, 206, 86, 0.75)',
-      'rgba(75, 192, 192, 0.75)',
-      'rgba(153, 102, 255, 0.75)',
-      'rgba(255, 159, 64, 0.75)',
-      'yellow',
-      'orange',
-      'cyan',
-      'gray',
-    ],
+    backgroundColor: this.backgroundColorArr,
+    // [
+    //   'rgba(255, 99, 132, 0.75)',
+    //   'rgba(54, 162, 235, 0.75)',
+    //   'rgba(255, 206, 86, 0.75)',
+    //   'rgba(75, 192, 192, 0.75)',
+    //   'rgba(153, 102, 255, 0.75)',
+    //   'rgba(255, 159, 64, 0.75)',
+    //   'yellow',
+    //   'orange',
+    //   'cyan',
+    //   'gray',
+    // ],
     hoverOffset: 4
   }],
       },
@@ -1503,18 +1081,7 @@ export class AppComponent implements OnInit{
           datasets: [{
       label: '',
       data: this.overallData[0]['Graph'][0]['Pie chart'][0]['trending_pie']['values'],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.75)',
-        'rgba(54, 162, 235, 0.75)',
-        'rgba(255, 206, 86, 0.75)',
-        'rgba(75, 192, 192, 0.75)',
-        'rgba(153, 102, 255, 0.75)',
-        'rgba(255, 159, 64, 0.75)',
-        'yellow',
-        'orange',
-        'cyan',
-        'gray',
-      ],
+      backgroundColor: this.backgroundColorArr,
       hoverOffset: 4
     }],
         },
@@ -1531,22 +1098,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_countries_bar']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1566,22 +1118,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_category_bar']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1601,22 +1138,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.overallData[0]['Graph'][0]['Pie chart'][0]['top_equipment_bar']['values'],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(153, 102, 255, 0.5)',
-            'rgba(255, 159, 64, 0.5)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
