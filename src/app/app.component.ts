@@ -108,13 +108,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void { }
   
   createResponseChart(value){  
-    console.log(value);
-    console.log(eval(`this.${value}`));
-    console.log(this.equipmentData);
-    // console.log(eval(`${value}`));
-    // console.log(eval(`this.${value}`));
+    this.convertedArray = [];
     for(let pair of Object.entries(eval(`this.${value}[0]['Response']`))){
-      // console.log(pair);
       this.convertedArray.push({name: pair[0], values: pair[1]});
     }
   }
