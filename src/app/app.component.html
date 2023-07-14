@@ -53,7 +53,7 @@
                 >{{tab}}</li>
         </ul>
         <div class="tabPanels">
-            <div id="panel_response" [style.display] = "selectedTab === 'Response'?'block':'none'">
+            <div id="panel_response" class="panel" [style.display] = "selectedTab === 'Response'?'block':'none'">
                 <div class="data_container" *ngFor="let data of convertedArray">
                     <h3 class="data_name">{{data.name}}</h3>
                     <div class="data_list">
@@ -195,15 +195,15 @@
                 </div>
             </div>
             <div id="panel_trend_pie" class="panel" [style.display] = "selectedTab === 'Trend Pie Chart'?'block':'none'">
-                <div class = "chart-item">
-                    <h3>Zone Vs Count</h3>
-                    <canvas id="trend_pie_chart_1"></canvas>
-                </div>
-                <div class = "chart-item">
-                    <h3>Trending Videos</h3>
-                    <canvas id="trend_pie_chart_2"></canvas>
-                </div>
                 <div style="display: grid; grid-template-columns: 50% 50%;">
+                    <div class = "chart-item">
+                        <h3>Zone Vs Count</h3>
+                        <canvas id="trend_pie_chart_1"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Trending Videos</h3>
+                        <canvas id="trend_pie_chart_2"></canvas>
+                    </div>
                     <div class = "chart-item">
                         <h3>Top 10 Countries</h3>
                         <canvas id="trend_pie_chart_3"></canvas>

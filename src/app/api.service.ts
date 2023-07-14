@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  baseUrl = 'http://52.39.232.226:5000';
+  baseUrl = 'https://fod-poc.forgeahead.io/api';
 
   constructor(private http: HttpClient) {}
 

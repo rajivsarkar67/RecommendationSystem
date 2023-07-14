@@ -62,45 +62,45 @@ export class AppComponent implements OnInit{
   trendPieChart4: any;
   trendPieChart5: any;
   
-  countryDataStatic: any = [{"Response": {},
-                            "Graph":
-                            [{"Country chart":
-                            [{"top_states_bar":
-                            {"labels": ["FL", "TX", "MN", "CA", "NC"], "values": [25107, 21321, 19206, 10719, 9191]},
-                            "top_category_pie":
-                            {"labels": ["Cycling", "Yoga & Pilates", "Strength", "Core", "HIIT", "Dance", "Cycling, Cycling", "HIIT, Strength", "Youth", "Dance, Cardio"], "values": [0.132009534583064, 0.09088154492566257, 0.060485011312217195, 0.05609647705235941, 0.04967780381383322, 0.04500141402714932, 0.037810075953458304, 0.03368414673561732, 0.03269432773109244, 0.030669238849385907]},
-                            "top_equipment_pie":
-                            {"labels": ["Cycle", "Mat", "Exercise Mat, Mat", "Yoga Mat, Mat", "Dumbbell, Exercise Mat, Mat", "Dumbbell", "Dumbbell, Mat", "Dumbbell, Yoga Mat, Mat", "Treadmill", "Step"], "values": [0.2750651881142726, 0.20377374709877075, 0.10237399352416975, 0.07004498696237714, 0.06107624860311184, 0.04382647067251211, 0.038439496833720166, 0.023224161150749306, 0.014026189862173702, 0.01352474282930743]},
-                            "trending_videos_pie":
-                            {"labels": ["20-Minute Nonstop Abs & Core", "10-Minute Bodyweight HIIT Workout", "10-Minute Yoga Deep Stretch", "25-Minute Box N' Burn Bootcamp", "30-Minute Hip-Hop Tabata to Torch Calories", "MOVE! 90's Hip Hop", "No Crunch Necessary", "R1DE 20 MIN LOW IMPACT", "Cycling: 45 Min Rhythm Ride w/ David"], "values": [0.014549274096260244, 0.011824535130413079, 0.010233370772494695, 0.008366612587878032, 0.008184616664586713, 0.007472232621989267, 0.007311036232788386, 0.007300636465743167, 0.006411456383377013]},
-                            "states_video_percentile":
-                            {"labels": ["CA", "CO", "FL", "IL", "MA", "MN", "NC", "NJ", "PA", "TX"], "values25": [70, 90, 19, 106, 96, 1591, 30, 65, 13, 11], "values50": [61, 87, 14, 90, 96, 1362, 30, 62, 13, 7], "values75": [55, 84, 11, 78, 91, 1256, 27, 60, 13, 5]},
-                            "watch_day_country":
-                            {"labels": ["Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"], "values": [28781, 30765, 22586, 18976, 31477, 33158, 33148]},
-                            "watch_time_day_country":
-                            {"labels": ["Afternoon", "Evening", "Morning", "Night"], "values": [76936, 35266, 21209, 65480]},
-                            "watch_time_hour_country":
-                            {"labels": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], "values": [9356, 7338, 4950, 3241, 2074, 1409, 1126, 1066, 1479, 3097, 6136, 8305, 10404, 13454, 13251, 13893, 13521, 12413, 12004, 11350, 11912, 13268, 12761, 11083]}}]}]}];
+  // countryDataStatic: any = [{"Response": {},
+  //                           "Graph":
+  //                           [{"Country chart":
+  //                           [{"top_states_bar":
+  //                           {"labels": ["FL", "TX", "MN", "CA", "NC"], "values": [25107, 21321, 19206, 10719, 9191]},
+  //                           "top_category_pie":
+  //                           {"labels": ["Cycling", "Yoga & Pilates", "Strength", "Core", "HIIT", "Dance", "Cycling, Cycling", "HIIT, Strength", "Youth", "Dance, Cardio"], "values": [0.132009534583064, 0.09088154492566257, 0.060485011312217195, 0.05609647705235941, 0.04967780381383322, 0.04500141402714932, 0.037810075953458304, 0.03368414673561732, 0.03269432773109244, 0.030669238849385907]},
+  //                           "top_equipment_pie":
+  //                           {"labels": ["Cycle", "Mat", "Exercise Mat, Mat", "Yoga Mat, Mat", "Dumbbell, Exercise Mat, Mat", "Dumbbell", "Dumbbell, Mat", "Dumbbell, Yoga Mat, Mat", "Treadmill", "Step"], "values": [0.2750651881142726, 0.20377374709877075, 0.10237399352416975, 0.07004498696237714, 0.06107624860311184, 0.04382647067251211, 0.038439496833720166, 0.023224161150749306, 0.014026189862173702, 0.01352474282930743]},
+  //                           "trending_videos_pie":
+  //                           {"labels": ["20-Minute Nonstop Abs & Core", "10-Minute Bodyweight HIIT Workout", "10-Minute Yoga Deep Stretch", "25-Minute Box N' Burn Bootcamp", "30-Minute Hip-Hop Tabata to Torch Calories", "MOVE! 90's Hip Hop", "No Crunch Necessary", "R1DE 20 MIN LOW IMPACT", "Cycling: 45 Min Rhythm Ride w/ David"], "values": [0.014549274096260244, 0.011824535130413079, 0.010233370772494695, 0.008366612587878032, 0.008184616664586713, 0.007472232621989267, 0.007311036232788386, 0.007300636465743167, 0.006411456383377013]},
+  //                           "states_video_percentile":
+  //                           {"labels": ["CA", "CO", "FL", "IL", "MA", "MN", "NC", "NJ", "PA", "TX"], "values25": [70, 90, 19, 106, 96, 1591, 30, 65, 13, 11], "values50": [61, 87, 14, 90, 96, 1362, 30, 62, 13, 7], "values75": [55, 84, 11, 78, 91, 1256, 27, 60, 13, 5]},
+  //                           "watch_day_country":
+  //                           {"labels": ["Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"], "values": [28781, 30765, 22586, 18976, 31477, 33158, 33148]},
+  //                           "watch_time_day_country":
+  //                           {"labels": ["Afternoon", "Evening", "Morning", "Night"], "values": [76936, 35266, 21209, 65480]},
+  //                           "watch_time_hour_country":
+  //                           {"labels": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], "values": [9356, 7338, 4950, 3241, 2074, 1409, 1126, 1066, 1479, 3097, 6136, 8305, 10404, 13454, 13251, 13893, 13521, 12413, 12004, 11350, 11912, 13268, 12761, 11083]}}]}]}];
 
-  stateDataStatic: any = [{"Response": {},
-                          "Graph":
-                          [{"State chart":
-                          [{"top_zones_bar":
-                          {"labels": ["Luna at Lake Shadow-", "Workout Anytime Palm Bay", "Seminole State College of Florida", "On Top of the World Communities - 2", "Isla Antigua"], "values": [1012, 529, 501, 484, 482]},
-                          "top_category_pie":
-                          {"labels": ["Cycling", "Yoga & Pilates", "Core", "Dance", "HIIT", "Strength", "Cycling, Cycling", "Youth", "HIIT, Strength", "HIIT, Cardio"], "values": [0.12473126841309022, 0.08261008042041564, 0.06131061390238076, 0.056732223903177004, 0.0549008679034955, 0.05390556572975556, 0.05151684051277968, 0.03893622103670674, 0.035870690341587706, 0.03304403216816625]},
-                          "top_equipment_pie":
-                          {"labels": ["Cycle", "Mat", "Exercise Mat, Mat", "Yoga Mat, Mat", "Dumbbell, Exercise Mat, Mat", "Dumbbell, Mat", "Dumbbell", "Dumbbell, Yoga Mat, Mat", "Treadmill", "Elliptical"], "values": [0.30516751845542306, 0.21714934696195343, 0.10607609312890404, 0.06672345258375922, 0.05985235661555934, 0.04077228847245883, 0.04031800113571834, 0.018909710391822827, 0.011300397501419647, 0.011300397501419647]},
-                          "trending_videos_pie":
-                          {"labels": ["20-Minute Abs & Core Finisher", "10-Minute Bodyweight HIIT Workout", "10-Minute Yoga Deep Stretch", "R1DE 20 MIN LOW IMPACT", "30-Minute HIIT Bodyweight Burn", "Cycling: 45 Min Rhythm Ride w/ David", "20 Minute Rhythm Ride - Latin Beats", "25-Minute Box N' Burn Bootcamp", "30-Minute Hip-Hop Tabata to Torch Calories"], "values": [0.01786359439604994, 0.013006302436674562, 0.01204287262655052, 0.011440728995222993, 0.01051744209385412, 0.010116013006302436, 0.009674441009995585, 0.009634298101240417, 0.009433583557464573]},
-                          "zones_video_percentile":
-                          {"labels": ["Isla Antigua", "Legacy Gateway Apartments", "Luna at Lake Shadow-", "Marriott Harbor Beach Resort - Fitness Center", "On Top of the World Communities - 2", "Seminole State College of Florida", "Serenity at Lake Wales", "The Oasis at Brandon", "Venetian Apartments", "Workout Anytime Palm Bay"], "values25": [0, 0, 0, 0, 11, 0, 0, 0, 0, 0], "values50": [0, 0, 0, 0, 10, 0, 0, 0, 0, 0], "values75": [0, 0, 0, 0, 8, 0, 0, 0, 0, 0]},
-                          "watch_day_states":
-                          {"labels": ["Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"], "values": [3370, 3908, 3182, 2836, 3895, 3849, 4078]},
-                          "watch_time_day_states":
-                        {"labels": ["Afternoon", "Evening", "Morning", "Night"], "values": [9887, 4301, 2748, 8182]},
-                        "watch_time_hour_states":
-                        {"labels": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], "values": [1284, 959, 600, 395, 232, 137, 158, 135, 410, 520, 588, 937, 1365, 1638, 1761, 1791, 1672, 1660, 1451, 1407, 1443, 1475, 1520, 1580]}}]}]}];
+  // stateDataStatic: any = [{"Response": {},
+  //                         "Graph":
+  //                         [{"State chart":
+  //                         [{"top_zones_bar":
+  //                         {"labels": ["Luna at Lake Shadow-", "Workout Anytime Palm Bay", "Seminole State College of Florida", "On Top of the World Communities - 2", "Isla Antigua"], "values": [1012, 529, 501, 484, 482]},
+  //                         "top_category_pie":
+  //                         {"labels": ["Cycling", "Yoga & Pilates", "Core", "Dance", "HIIT", "Strength", "Cycling, Cycling", "Youth", "HIIT, Strength", "HIIT, Cardio"], "values": [0.12473126841309022, 0.08261008042041564, 0.06131061390238076, 0.056732223903177004, 0.0549008679034955, 0.05390556572975556, 0.05151684051277968, 0.03893622103670674, 0.035870690341587706, 0.03304403216816625]},
+  //                         "top_equipment_pie":
+  //                         {"labels": ["Cycle", "Mat", "Exercise Mat, Mat", "Yoga Mat, Mat", "Dumbbell, Exercise Mat, Mat", "Dumbbell, Mat", "Dumbbell", "Dumbbell, Yoga Mat, Mat", "Treadmill", "Elliptical"], "values": [0.30516751845542306, 0.21714934696195343, 0.10607609312890404, 0.06672345258375922, 0.05985235661555934, 0.04077228847245883, 0.04031800113571834, 0.018909710391822827, 0.011300397501419647, 0.011300397501419647]},
+  //                         "trending_videos_pie":
+  //                         {"labels": ["20-Minute Abs & Core Finisher", "10-Minute Bodyweight HIIT Workout", "10-Minute Yoga Deep Stretch", "R1DE 20 MIN LOW IMPACT", "30-Minute HIIT Bodyweight Burn", "Cycling: 45 Min Rhythm Ride w/ David", "20 Minute Rhythm Ride - Latin Beats", "25-Minute Box N' Burn Bootcamp", "30-Minute Hip-Hop Tabata to Torch Calories"], "values": [0.01786359439604994, 0.013006302436674562, 0.01204287262655052, 0.011440728995222993, 0.01051744209385412, 0.010116013006302436, 0.009674441009995585, 0.009634298101240417, 0.009433583557464573]},
+  //                         "zones_video_percentile":
+  //                         {"labels": ["Isla Antigua", "Legacy Gateway Apartments", "Luna at Lake Shadow-", "Marriott Harbor Beach Resort - Fitness Center", "On Top of the World Communities - 2", "Seminole State College of Florida", "Serenity at Lake Wales", "The Oasis at Brandon", "Venetian Apartments", "Workout Anytime Palm Bay"], "values25": [0, 0, 0, 0, 11, 0, 0, 0, 0, 0], "values50": [0, 0, 0, 0, 10, 0, 0, 0, 0, 0], "values75": [0, 0, 0, 0, 8, 0, 0, 0, 0, 0]},
+  //                         "watch_day_states":
+  //                         {"labels": ["Friday", "Monday", "Saturday", "Sunday", "Thursday", "Tuesday", "Wednesday"], "values": [3370, 3908, 3182, 2836, 3895, 3849, 4078]},
+  //                         "watch_time_day_states":
+  //                       {"labels": ["Afternoon", "Evening", "Morning", "Night"], "values": [9887, 4301, 2748, 8182]},
+  //                       "watch_time_hour_states":
+  //                       {"labels": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], "values": [1284, 959, 600, 395, 232, 137, 158, 135, 410, 520, 588, 937, 1365, 1638, 1761, 1791, 1672, 1660, 1451, 1407, 1443, 1475, 1520, 1580]}}]}]}];
   
 
   constructor(private apiService: ApiService){ }
@@ -108,7 +108,6 @@ export class AppComponent implements OnInit{
   ngOnInit(): void { }
   
   createResponseChart(value){  
-    this.convertedArray = [];
     for(let pair of Object.entries(eval(`this.${value}[0]['Response']`))){
       this.convertedArray.push({name: pair[0], values: pair[1]});
     }
@@ -119,6 +118,7 @@ export class AppComponent implements OnInit{
     this.tabArray = [];
     this.firstBox = '';
     this.secondBox = '';
+    this.convertedArray = [];
     if(val === "user"){
       this.text_from_dropdown = 'Enter User ID : ';
     }
@@ -162,8 +162,8 @@ export class AppComponent implements OnInit{
       this.tabArray = ['Response', 'User Chart'];
       this.apiService.getUserData({"UserId":this.firstBox}).subscribe(resp => {
         this.userData = JSON.parse(resp);
-        this.createUserChart();
         this.createResponseChart('userData');
+        this.createUserChart();
       })
       this.selectedTab = 'Response';
     }
@@ -174,8 +174,8 @@ export class AppComponent implements OnInit{
       this.tabArray = ['Response','Zone Chart'];
       this.apiService.getZoneData({"ZoneName":this.firstBox}).subscribe(resp => {
         this.zoneData = JSON.parse(resp);
-        this.createZoneChart();
         this.createResponseChart('zoneData');
+        this.createZoneChart();
       })
       this.selectedTab = 'Response';
     }
@@ -186,8 +186,8 @@ export class AppComponent implements OnInit{
       this.tabArray = ['Response','User Chart', 'Zone Chart'];
       this.apiService.getUserZoneData({"ZoneName":this.secondBox,"UserId":this.firstBox}).subscribe(resp => {
         this.userZoneData = JSON.parse(resp);
-        this.createUserZoneChart();
         this.createResponseChart('userZoneData');
+        this.createUserZoneChart();
       })
       this.selectedTab = 'Response';
     }
@@ -198,8 +198,8 @@ export class AppComponent implements OnInit{
       this.tabArray = ['Response','Video Chart'];
       this.apiService.getVideonameData({"VideoName" : this.firstBox}).subscribe(resp => {
         this.videonameData = JSON.parse(resp);
-        this.createVideonameChart();
         this.createResponseChart('videonameData');
+        this.createVideonameChart();
       });
       this.selectedTab = 'Response';
     }
@@ -210,8 +210,8 @@ export class AppComponent implements OnInit{
       this.tabArray = ['Response','Instructor Chart'];
       this.apiService.getInstructorData({"InstructorId":this.firstBox}).subscribe(resp => {
         this.instructorData = JSON.parse(resp);
-        this.createInstructorChart();
         this.createResponseChart('instructorData');
+        this.createInstructorChart();
       });
       this.selectedTab = 'Response';
     }
@@ -221,8 +221,8 @@ export class AppComponent implements OnInit{
       }
       this.tabArray = ['Response'];
       this.apiService.getFociData({"Foci": this.firstBox}).subscribe(resp => {
-        this.fociData = JSON.parse(resp);
         this.createResponseChart('fociData');
+        this.fociData = JSON.parse(resp);
       })
       this.selectedTab = 'Response';
     }
@@ -232,8 +232,8 @@ export class AppComponent implements OnInit{
       }
       this.tabArray = ['Response'];
       this.apiService.getCategoryData({"Category" : this.firstBox}).subscribe(resp => {
-        this.categoryData = JSON.parse(resp);
         this.createResponseChart('categoryData');
+        this.categoryData = JSON.parse(resp);
       })
       this.selectedTab = 'Response';
     }
@@ -243,8 +243,8 @@ export class AppComponent implements OnInit{
       }
       this.tabArray = ['Response'];
       this.apiService.getEquipmentData({"Equipment" : this.firstBox}).subscribe(resp => {
-        this.equipmentData = JSON.parse(resp);
         this.createResponseChart('equipmentData');
+        this.equipmentData = JSON.parse(resp);
       })
       this.selectedTab = 'Response';
     }
@@ -278,8 +278,8 @@ export class AppComponent implements OnInit{
       this.tabArray = ['Response', 'Trend Pie Chart'];
       this.apiService.getOverallData({}).subscribe(resp => {
         this.overallData = JSON.parse(resp);
-        this.createTrendPieChart();
         this.createResponseChart('overallData');
+        this.createTrendPieChart();
       })
       this.selectedTab = 'Response';
     }
@@ -292,6 +292,8 @@ export class AppComponent implements OnInit{
     this.userChart3?.destroy();
     this.userChart4?.destroy();
     this.userChart5?.destroy();
+
+    console.log(this.userData[0]['Graph'][0]['User chart'][0]);
 
     this.userChart1 = new Chart("user_chart_1", {
       type: 'bar',
@@ -356,10 +358,10 @@ export class AppComponent implements OnInit{
     this.userChart4 = new Chart("user_chart_4", {
       type: 'bar',
       data: {
-        labels: this.userData[0]['Graph'][0]['User chart'][0]['equipment']['values'],
+        labels: this.userData[0]['Graph'][0]['User chart'][0]['user_equip']['labels'],
         datasets: [{
           label: 'Count',
-          data: this.userData[0]['Graph'][0]['User chart'][0]['equipment']['labels'],
+          data: this.userData[0]['Graph'][0]['User chart'][0]['user_equip']['values'],
           backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
