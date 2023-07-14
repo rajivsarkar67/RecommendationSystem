@@ -1,7 +1,9 @@
 .chart-item{
     padding: 3rem 1rem;
-    border-radius: 1rem;
-    // box-shadow: ;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    // border: 1px solid black;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 }
 
 .top-section{
@@ -124,35 +126,35 @@
         }
     }
 
-    // .no_data{
-    //     font-size: x-large;
-    //     margin-top: 3rem;
-    //     color: #13bc5b;
-    //     height: 10rem;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     background-color: #f9f9f9;
-    //     border-radius: 1rem;
-    //     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-    // }
-
     .tab-container{
         margin-top: 50px;
         margin-bottom: 50px;
+        position: absolute;
         .btn-container{
             display: inline-block;
             height: 37px;
             font-size: larger;
-            margin-bottom: -1px;
-            border-bottom: 0;
-            width: auto;
+            margin-left: 2rem;
+            width: fit-content;
+            position: relative;
+            top: 1.4rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+            padding: 0.5rem;
+            background-color: white;
             .tab_btn{
                 list-style: none;
                 padding: 0.5rem 1rem 0.5rem 1rem;
                 cursor: pointer;
                 display: inline-block;
-                border: 1px solid rgb(255, 186, 0);
+                // border: 1px solid rgb(255, 186, 0);
+                border-radius: 0.5rem;
+                background-color: white;
+            }
+            .active-btn{
+                color: #fff;
+                background-color: #ffba00;
+                // border-bottom: none;
             }
         }
 
@@ -160,9 +162,11 @@
             margin-top: 0.2rem;
             
             .panel{
-                border: 1px solid rgb(255, 186, 0);
-                // border-radius: 0.4rem;
-                // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+                // border: 1px solid rgb(255, 186, 0);
+                box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+                border-radius: 0.5rem;
+                padding: 1rem;
+                width: 80vw;
             }
         }
 

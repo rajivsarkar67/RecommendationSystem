@@ -8,7 +8,7 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  backgroundColorArr = ['#e95b5c','#8ed1e6','#e8a34d','#4762a5','#1caa90','#f9da8d'];
+  backgroundColorArr = ['#e95b5c','#8ed1e6','#e8a34d','#4762a5','#1caa90','#f9da8d', '#ffdb00', '#00b0f0', '#aef78e', '#8191a2'];
   title = 'RecommendationSystem';
   text_from_dropdown = 'Enter User ID : ';
   showMainWrapper:boolean=false;
@@ -33,6 +33,7 @@ export class AppComponent implements OnInit{
   userChart2: any;
   userChart3: any;
   userChart4: any;
+  userChart5: any;
   zoneChart1: any;
   zoneChart2: any;
   zoneChart3: any;
@@ -252,12 +253,12 @@ export class AppComponent implements OnInit{
         return;
       }
       this.tabArray = ['Country Chart'];
-      // this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
-      //   this.countryData = JSON.parse(resp);
-      //   this.createCountryChart();
-      // })
-      this.countryData = this.countryDataStatic;
-      this.createCountryChart();
+      this.apiService.getCountryData({"Country" : this.firstBox}).subscribe(resp => {
+        this.countryData = JSON.parse(resp);
+        this.createCountryChart();
+      })
+      // this.countryData = this.countryDataStatic;
+      // this.createCountryChart();
       this.selectedTab = 'Country Chart';
     }
     else if(val === "state"){
@@ -265,12 +266,12 @@ export class AppComponent implements OnInit{
         return;
       }
       this.tabArray = ['State Chart'];
-      // this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
-      //   this.stateData = JSON.parse(resp);
-      //   this.createStateChart();
-      // })
-      this.stateData = this.stateDataStatic;
-      this.createStateChart();
+      this.apiService.getStateData({"State" : this.firstBox}).subscribe(resp => {
+        this.stateData = JSON.parse(resp);
+        this.createStateChart();
+      })
+      // this.stateData = this.stateDataStatic;
+      // this.createStateChart();
       this.selectedTab = 'State Chart';
     }
     else if(val === "overall"){
@@ -290,6 +291,7 @@ export class AppComponent implements OnInit{
     this.userChart2?.destroy();
     this.userChart3?.destroy();
     this.userChart4?.destroy();
+    this.userChart5?.destroy();
 
     this.userChart1 = new Chart("user_chart_1", {
       type: 'bar',
@@ -352,6 +354,26 @@ export class AppComponent implements OnInit{
     });
 
     this.userChart4 = new Chart("user_chart_4", {
+      type: 'bar',
+      data: {
+        labels: this.userData[0]['Graph'][0]['User chart'][0]['equipment']['values'],
+        datasets: [{
+          label: 'Count',
+          data: this.userData[0]['Graph'][0]['User chart'][0]['equipment']['labels'],
+          backgroundColor: this.backgroundColorArr,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          },
+        },
+      }
+    });
+
+    this.userChart5 = new Chart("user_chart_5", {
       type: 'bar',
       data: {
         labels: this.userData[0]['Graph'][0]['User chart'][0]['recommendations']['values'],
@@ -734,27 +756,27 @@ export class AppComponent implements OnInit{
       options: {
         plugins: {
           legend: {
-            position: 'right'
+            position: 'left'
           }
         }
       }
     });
-
+    
     this.countryChart5 = new Chart("country_chart_5", {
       type: 'bar',
       data: {
         labels: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['labels'],
         datasets: [{
             label: '25%',
-            backgroundColor: 'rgba(255, 99, 132, 0.7)',
+            backgroundColor: '#e95b5c',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values25'],
         }, {
             label: '50%',
-            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            backgroundColor: '#8ed1e6',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values50'],
         }, {
             label: '75%',
-            backgroundColor: 'rgba(255, 206, 86, 0.7)',
+            backgroundColor: '#e8a34d',
             data: this.countryData[0]['Graph'][0]['Country chart'][0]['states_video_percentile']['values75'],
         }],
       },
@@ -840,14 +862,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_zones_bar']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -867,14 +882,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_category_pie']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -898,18 +906,17 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['top_equipment_pie']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
-      options: {}
+      options: {
+        plugins: {
+          legend: {
+            position: 'left'
+          }
+        }
+      },
     });
 
     this.stateChart4 = new Chart("state_chart_4", {
@@ -919,18 +926,17 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['trending_videos_pie']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
-      options: {}
+      options: {
+        plugins: {
+          legend: {
+            position: 'left'
+          }
+        }
+      }
     });
 
     this.stateChart5 = new Chart("state_chart_5", {
@@ -961,14 +967,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_day_states']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -988,14 +987,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_day_states']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1015,14 +1007,7 @@ export class AppComponent implements OnInit{
         datasets: [{
           label: 'Count',
           data: this.stateData[0]['Graph'][0]['State chart'][0]['watch_time_hour_states']['values'],
-          backgroundColor: [
-            '#e95b5c',
-            '#8ed1e6',
-            '#e8a34d',
-            '#4762a5',
-            '#1caa90',
-            '#f9da8d'
-          ],
+          backgroundColor: this.backgroundColorArr,
           borderWidth: 1
         }]
       },
@@ -1049,26 +1034,17 @@ export class AppComponent implements OnInit{
     data: {// values on X-Axis
       labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['zone_pie']['labels'],
         datasets: [{
-    label: '',
-    data: this.overallData[0]['Graph'][0]['Pie chart'][0]['zone_pie']['values'],
-    backgroundColor: this.backgroundColorArr,
-    // [
-    //   'rgba(255, 99, 132, 0.75)',
-    //   'rgba(54, 162, 235, 0.75)',
-    //   'rgba(255, 206, 86, 0.75)',
-    //   'rgba(75, 192, 192, 0.75)',
-    //   'rgba(153, 102, 255, 0.75)',
-    //   'rgba(255, 159, 64, 0.75)',
-    //   'yellow',
-    //   'orange',
-    //   'cyan',
-    //   'gray',
-    // ],
-    hoverOffset: 4
-  }],
+          label: '',
+          data: this.overallData[0]['Graph'][0]['Pie chart'][0]['zone_pie']['values'],
+          backgroundColor: this.backgroundColorArr,
+        }],
       },
       options: {
-        aspectRatio:2.5
+        plugins: {
+          legend: {
+            position: 'left'
+          }
+        }
       }
 
     });
@@ -1079,15 +1055,18 @@ export class AppComponent implements OnInit{
       data: {// values on X-Axis
         labels: this.overallData[0]['Graph'][0]['Pie chart'][0]['trending_pie']['labels'],
           datasets: [{
-      label: '',
-      data: this.overallData[0]['Graph'][0]['Pie chart'][0]['trending_pie']['values'],
-      backgroundColor: this.backgroundColorArr,
-      hoverOffset: 4
-    }],
-        },
-        options: {
-          aspectRatio:2.5
+          label: '',
+          data: this.overallData[0]['Graph'][0]['Pie chart'][0]['trending_pie']['values'],
+          backgroundColor: this.backgroundColorArr,
+        }],
+      },
+      options: {
+        plugins: {
+          legend: {
+            position: 'left'
+          }
         }
+      }
   
     });
 

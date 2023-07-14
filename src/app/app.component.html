@@ -47,11 +47,9 @@
 
 <div class="main-wrapper" [style.display]="showMainWrapper?'block':'none'">
     <div class="tab-container">
-        <ul class="btn-container">
+        <ul class="btn-container" [style.display]="selectedTab? 'block': 'none'">
             <li class="tab_btn" *ngFor="let tab of tabArray" (click)="selectedTab = tab;"
-                [style.color]="selectedTab === tab? '#fff':''"
-                [style.background]="selectedTab === tab? '#ffba00':''"
-                [style.borderBottom]="selectedTab === tab? 'none':''"
+                [ngClass]="{'active-btn': selectedTab === tab}"
                 >{{tab}}</li>
         </ul>
         <div class="tabPanels">
@@ -80,10 +78,14 @@
                         <h3>Watch Again Recommendations</h3>
                         <canvas id="user_chart_3"></canvas>
                     </div>
+                    <div class = "chart-item">
+                        <h3>User Equipment Level Graph</h3>
+                        <canvas id="user_chart_4"></canvas>
+                    </div>
                 </div>
                 <div class = "chart-item">
                     <h3>Video Watched by Similar Users</h3>
-                    <canvas id="user_chart_4"></canvas>
+                    <canvas id="user_chart_5"></canvas>
                 </div>
             </div>
             <div id="panel_zone" class="panel" [style.display] = "selectedTab === 'Zone Chart'?'block':'none'">
