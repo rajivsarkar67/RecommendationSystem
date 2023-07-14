@@ -108,7 +108,13 @@ export class AppComponent implements OnInit{
   ngOnInit(): void { }
   
   createResponseChart(value){  
+    console.log(value);
+    console.log(eval(`this.${value}`));
+    console.log(this.equipmentData);
+    // console.log(eval(`${value}`));
+    // console.log(eval(`this.${value}`));
     for(let pair of Object.entries(eval(`this.${value}[0]['Response']`))){
+      // console.log(pair);
       this.convertedArray.push({name: pair[0], values: pair[1]});
     }
   }
@@ -221,8 +227,8 @@ export class AppComponent implements OnInit{
       }
       this.tabArray = ['Response'];
       this.apiService.getFociData({"Foci": this.firstBox}).subscribe(resp => {
-        this.createResponseChart('fociData');
         this.fociData = JSON.parse(resp);
+        this.createResponseChart('fociData');
       })
       this.selectedTab = 'Response';
     }
@@ -232,8 +238,8 @@ export class AppComponent implements OnInit{
       }
       this.tabArray = ['Response'];
       this.apiService.getCategoryData({"Category" : this.firstBox}).subscribe(resp => {
-        this.createResponseChart('categoryData');
         this.categoryData = JSON.parse(resp);
+        this.createResponseChart('categoryData');
       })
       this.selectedTab = 'Response';
     }
@@ -243,8 +249,8 @@ export class AppComponent implements OnInit{
       }
       this.tabArray = ['Response'];
       this.apiService.getEquipmentData({"Equipment" : this.firstBox}).subscribe(resp => {
-        this.createResponseChart('equipmentData');
         this.equipmentData = JSON.parse(resp);
+        this.createResponseChart('equipmentData');
       })
       this.selectedTab = 'Response';
     }
