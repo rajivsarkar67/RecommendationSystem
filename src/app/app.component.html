@@ -18,10 +18,11 @@
                         <option value="country">Country</option>
                         <option value="state">State</option>
                         <option value="overall">Overall Trend</option>
+                        <option value="b2c">B2C Analytics</option>
                     </select>
                 </div>
                 <!-- First set of input box and button -->
-                <div id="first_label" *ngIf="myDropdown.value !== 'overall'" class="form-field">
+                <div id="first_label" *ngIf="myDropdown.value !== 'overall' && myDropdown.value !== 'b2c'" class="form-field">
                     <label class="lable-input">{{text_from_dropdown}}</label>
                     <input type="text" #firstTextBox [(ngModel)]="firstBox">
                 </div>               
@@ -215,6 +216,66 @@
                     <div class = "chart-item">
                         <h3>Top 10 Equipments</h3>
                         <canvas id="trend_pie_chart_5"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="panel_b2c" class="panel" [style.display] = "selectedTab === 'B2C Analytics'?'block':'none'">
+                <div style="display: grid; grid-template-columns: 50% 50%;">
+                    <div class = "chart-item">
+                        <h3>USA UserType</h3>
+                        <canvas id="b2c_chart_1"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>AUS UserType</h3>
+                        <canvas id="b2c_chart_2"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>GBR UserType</h3>
+                        <canvas id="b2c_chart_3"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>CAN UserType</h3>
+                        <canvas id="b2c_chart_4"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>NZL UserType</h3>
+                        <canvas id="b2c_chart_5"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>License</h3>
+                        <canvas id="b2c_chart_6"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Day Flex</h3>
+                        <canvas id="b2c_chart_7"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Time Day Flex</h3>
+                        <canvas id="b2c_chart_8"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Time Hour Compare</h3>
+                        <canvas id="b2c_chart_9"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Day B2C Android</h3>
+                        <canvas id="b2c_chart_10"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Day B2C iOS</h3>
+                        <canvas id="b2c_chart_11"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Time Day B2C Android</h3>
+                        <canvas id="b2c_chart_12"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Time Day B2C iOS</h3>
+                        <canvas id="b2c_chart_13"></canvas>
+                    </div>
+                    <div class = "chart-item">
+                        <h3>Watch Time Hour B2C Compare</h3>
+                        <canvas id="b2c_chart_14"></canvas>
                     </div>
                 </div>
             </div>
